@@ -6,7 +6,7 @@ import { CheckCircle2, User, Clock, AlertTriangle, MessageSquare, Sparkles, Tren
 
 export default function CassieStory() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"]
@@ -23,7 +23,7 @@ export default function CassieStory() {
   );
 
   return (
-    <motion.section 
+    <motion.section
       ref={containerRef}
       style={{ backgroundColor }}
       className="relative w-full transition-colors duration-700"
@@ -38,7 +38,6 @@ export default function CassieStory() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">Hồi 1: Sự khởi đầu</h2>
             <p className="text-2xl sm:text-3xl md:text-5xl font-medium text-white tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               Khi bạn làm tất cả mọi việc.
             </p>
@@ -115,7 +114,6 @@ export default function CassieStory() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <h2 className="text-sm font-bold tracking-widest text-red-500/50 uppercase mb-4">Hồi 2: Sự quá tải</h2>
             <p className="text-2xl sm:text-3xl md:text-5xl font-medium text-white tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               Khi quy mô vượt quá tầm kiểm soát.
             </p>
@@ -152,7 +150,7 @@ export default function CassieStory() {
                 <div className="absolute -left-[21px] top-1 w-10 h-10 rounded-full bg-[#0a0505] border border-red-900/50 flex items-center justify-center">
                   {item.icon}
                 </div>
-                
+
                 <h3 className="text-2xl font-semibold text-gray-200 mb-2">{item.title}</h3>
                 <p className="text-gray-500 text-lg">{item.desc}</p>
               </motion.div>
@@ -180,7 +178,6 @@ export default function CassieStory() {
             transition={{ duration: 0.8 }}
             className="mb-12"
           >
-            <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">Hồi 3: Giải pháp</h2>
           </motion.div>
 
           {/* Cassie Avatar/Orb */}

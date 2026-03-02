@@ -4,8 +4,29 @@ import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { Sparkles, Play } from "lucide-react";
 import { useEffect, useState } from "react";
 
-export default function CassieHero() {
+interface ParticleConfig {
+  count?: number;
+  minSpeed?: number;
+  maxSpeed?: number;
+  color?: string;
+  minSize?: number;
+  maxSize?: number;
+}
+
+export default function CassieHero({ 
+  particleConfig = {
+    count: 30,
+    minSpeed: 10,
+    maxSpeed: 30,
+    color: "bg-blue-400/40",
+    minSize: 1,
+    maxSize: 4
+  }
+}: { 
+  particleConfig?: ParticleConfig 
+}) {
   const [mounted, setMounted] = useState(false);
+  const { count = 30, minSpeed = 10, maxSpeed = 30, color = "bg-blue-400/40", minSize = 1, maxSize = 4 } = particleConfig;
 
   // Mouse tracking for parallax effect
   const mouseX = useMotionValue(0);
@@ -106,12 +127,12 @@ export default function CassieHero() {
         {/* Floating Particles */}
         {mounted && (
           <div className="absolute inset-0">
-            {Array.from({ length: 30 }).map((_, i) => {
-              const size = Math.random() * 3 + 1;
+            {Array.from({ length: count }).map((_, i) => {
+              const size = Math.random() * (maxSize - minSize) + minSize;
               return (
                 <motion.div
                   key={i}
-                  className="absolute rounded-full bg-blue-400/40 shadow-[0_0_10px_rgba(96,165,250,0.5)]"
+                  className={`absolute rounded-full ${color} shadow-[0_0_10px_rgba(96,165,250,0.5)]`}
                   style={{
                     width: size,
                     height: size,
@@ -127,7 +148,7 @@ export default function CassieHero() {
                     opacity: [null, Math.random() * 0.8 + 0.2, 0],
                   }}
                   transition={{
-                    duration: Math.random() * 20 + 10,
+                    duration: Math.random() * (maxSpeed - minSpeed) + minSpeed,
                     repeat: Infinity,
                     ease: "linear",
                   }}
@@ -154,7 +175,7 @@ export default function CassieHero() {
           initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white via-blue-50 to-blue-200/50"
+          className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-b from-white via-blue-50 to-blue-200/50"
           style={{ fontFamily: "var(--font-display)" }}
         >
           Hi Sếp, CASSIE đây.

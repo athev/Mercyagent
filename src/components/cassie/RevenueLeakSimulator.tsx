@@ -104,12 +104,12 @@ export default function RevenueLeakSimulator() {
           </div>
 
           {/* Right Side: Visual Simulator */}
-          <div className="relative flex justify-center items-center h-[500px]">
+          <div className="relative flex justify-center items-center h-[400px] md:h-[500px]">
             
             {/* The Glass Bucket */}
-            <div className="relative w-64 h-80">
+            <div className="relative w-48 h-64 md:w-64 md:h-80">
               {/* Bucket Body (Glassmorphism) */}
-              <div className="absolute inset-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-b-[40px] rounded-t-xl overflow-hidden shadow-2xl z-20">
+              <div className="absolute inset-0 bg-white/10 backdrop-blur-md border border-white/20 rounded-b-[30px] md:rounded-b-[40px] rounded-t-xl overflow-hidden shadow-2xl z-20">
                 {/* Revenue Level (Gold Coins Fill) */}
                 <motion.div 
                   animate={{ 
@@ -120,7 +120,7 @@ export default function RevenueLeakSimulator() {
                 >
                   {/* Decorative Coins Inside */}
                   <div className="absolute top-0 left-0 w-full h-full opacity-40 overflow-hidden">
-                    {[...Array(12)].map((_, i) => (
+                    {isClient && [...Array(12)].map((_, i) => (
                       <div 
                         key={i}
                         className="absolute w-8 h-8 bg-yellow-500/40 rounded-full border border-yellow-400/50"
@@ -218,11 +218,11 @@ export default function RevenueLeakSimulator() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="absolute top-0 right-0 p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md z-40"
+              className="absolute top-0 right-0 md:right-0 p-3 md:p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md z-40"
             >
               <div className="flex items-center gap-2">
-                <Coins className="w-4 h-4 text-yellow-400" />
-                <span className="text-xs font-bold text-white uppercase tracking-wider">Revenue Stream</span>
+                <Coins className="w-3 h-3 md:w-4 md:h-4 text-yellow-400" />
+                <span className="text-[10px] md:text-xs font-bold text-white uppercase tracking-wider">Revenue Stream</span>
               </div>
             </motion.div>
           </div>

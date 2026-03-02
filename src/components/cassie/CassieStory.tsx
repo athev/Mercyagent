@@ -39,7 +39,7 @@ export default function CassieStory() {
             className="text-center mb-16"
           >
             <h2 className="text-sm font-bold tracking-widest text-gray-500 uppercase mb-4">Hồi 1: Sự khởi đầu</h2>
-            <p className="text-3xl md:text-5xl font-medium text-white tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+            <p className="text-2xl sm:text-3xl md:text-5xl font-medium text-white tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               Khi bạn làm tất cả mọi việc.
             </p>
           </motion.div>
@@ -116,7 +116,7 @@ export default function CassieStory() {
             className="text-center mb-20"
           >
             <h2 className="text-sm font-bold tracking-widest text-red-500/50 uppercase mb-4">Hồi 2: Sự quá tải</h2>
-            <p className="text-3xl md:text-5xl font-medium text-white tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
+            <p className="text-2xl sm:text-3xl md:text-5xl font-medium text-white tracking-tight" style={{ fontFamily: "var(--font-display)" }}>
               Khi quy mô vượt quá tầm kiểm soát.
             </p>
           </motion.div>
@@ -202,7 +202,7 @@ export default function CassieStory() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-4xl md:text-6xl font-bold text-white mb-12 tracking-tight"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold text-white mb-12 tracking-tight"
             style={{ fontFamily: "var(--font-display)" }}
           >
             CASSIE xuất hiện.

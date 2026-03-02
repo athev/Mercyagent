@@ -88,7 +88,7 @@ export default function CassiePricing() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-white"
+            className="text-3xl sm:text-4xl md:text-6xl font-bold tracking-tighter mb-6 text-white"
             style={{ fontFamily: 'Space Grotesk, sans-serif' }}
           >
             Đầu tư cho sự <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#93C5FD] via-[#FDE68A] to-[#A78BFA]">thảnh thơi</span>

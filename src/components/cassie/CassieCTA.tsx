@@ -1,9 +1,16 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Sparkles, ArrowRight } from "lucide-react";
 
 export default function CassieCTA() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden bg-[#050505] py-32">
       {/* Misty/Foggy Background Effects */}
@@ -65,7 +72,7 @@ export default function CassieCTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1.5, delay: 1.2 }}
-            className="text-4xl md:text-6xl font-light tracking-tight text-white leading-tight"
+            className="text-3xl sm:text-4xl md:text-6xl font-light tracking-tight text-white leading-tight"
             style={{ fontFamily: 'Space Grotesk, sans-serif' }}
           >
             "Khách hàng không cần lý do. <br />
@@ -82,7 +89,7 @@ export default function CassieCTA() {
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 2.5 }}
         >
-          <button className="group relative px-10 py-5 bg-white text-black rounded-full font-bold text-lg overflow-hidden transition-all hover:pr-14 active:scale-95">
+          <button className="group relative px-6 sm:px-10 py-4 sm:py-5 bg-white text-black rounded-full font-bold text-base sm:text-lg overflow-hidden transition-all hover:pr-14 active:scale-95">
             <span className="relative z-10 flex items-center gap-2">
               Dùng thử 7 ngày miễn phí
               <Sparkles className="w-5 h-5 text-cyan-500" />
@@ -99,7 +106,7 @@ export default function CassieCTA() {
       </div>
 
       {/* Decorative Floating Particles */}
-      {[...Array(15)].map((_, i) => (
+      {mounted && [...Array(15)].map((_, i) => (
         <motion.div
           key={i}
           initial={{ 

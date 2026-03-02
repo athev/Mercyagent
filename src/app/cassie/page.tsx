@@ -1,3 +1,4 @@
+import CassieNavbar from "../../components/cassie/CassieNavbar";
 import CassieHero from "../../components/cassie/CassieHero";
 import CassieProblem from "../../components/cassie/CassieProblem";
 import RevenueLeakSimulator from "../../components/cassie/RevenueLeakSimulator";
@@ -16,6 +17,7 @@ export const metadata = {
 export default function CassiePage() {
   return (
     <main className="min-h-screen bg-[#030712] text-white selection:bg-blue-500/30">
+      <CassieNavbar />
       <CassieHero />
       <CassieProblem />
       <RevenueLeakSimulator />
@@ -25,7 +27,7 @@ export default function CassiePage() {
       <CassieEvolution />
       <CassiePricing />
       <CassieCTA />
-      
+
       <footer className="py-20 text-center border-t border-white/5 bg-[#030712]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col items-center gap-6">

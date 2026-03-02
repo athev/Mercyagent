@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { Sun, Moon, Globe } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -29,16 +30,17 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-[#06B6D4] to-[#F97316] flex items-center justify-center">
             <span className="text-white font-bold text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>M</span>
           </div>
           <span className="text-primary font-bold tracking-widest text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
             MERCY<span className="text-secondary">AGENT</span>
           </span>
-        </div>
+        </Link>
         
         <div className="hidden md:flex items-center gap-8">
+          <Link href="/cassie" className="text-sm text-blue-400 font-bold hover:text-blue-300 transition-colors">CASSIE AI</Link>
           <a href="#strategy" className="text-sm text-secondary hover:text-[#F59E0B] transition-colors">{t('nav.strategy')}</a>
           <a href="#growth" className="text-sm text-secondary hover:text-[#F97316] transition-colors">{t('nav.growth')}</a>
           <a href="#operation" className="text-sm text-secondary hover:text-[#06B6D4] transition-colors">{t('nav.operations')}</a>

@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { Check, ShieldCheck, Coffee, Zap, Sparkles, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const plans = [
   {
@@ -68,7 +69,7 @@ export default function CassiePricing() {
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#93C5FD]/5 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 relative z-10">
-        
+
         {/* Header */}
         <div className="text-center mb-24">
           <motion.div
@@ -83,7 +84,7 @@ export default function CassiePricing() {
             </span>
           </motion.div>
 
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -93,7 +94,7 @@ export default function CassiePricing() {
           >
             Đầu tư cho sự <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#93C5FD] via-[#FDE68A] to-[#A78BFA]">thảnh thơi</span>
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -114,16 +115,15 @@ export default function CassiePricing() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
-              className={`relative rounded-3xl flex flex-col overflow-hidden transition-all duration-500 bg-[#0B0F19] ${
-                plan.popular 
-                  ? 'border-2 lg:-translate-y-4 shadow-2xl z-20' 
+              className={`relative rounded-3xl flex flex-col overflow-hidden transition-all duration-500 bg-[#0B0F19] ${plan.popular
+                  ? 'border-2 lg:-translate-y-4 shadow-2xl z-20'
                   : 'border border-white/10 mt-0 lg:mt-4 hover:border-white/20 z-10'
-              }`}
+                }`}
               style={{ borderColor: plan.popular ? plan.color : undefined }}
             >
               {/* Popular Header */}
               {plan.popular && (
-                <div 
+                <div
                   className="w-full text-center py-2 text-sm font-bold tracking-wide"
                   style={{ backgroundColor: plan.color, color: '#1E1B4B' }}
                 >
@@ -133,18 +133,18 @@ export default function CassiePricing() {
 
               {/* Image Section */}
               <div className="relative h-48 w-full bg-slate-900">
-                <img 
-                  src={plan.image} 
-                  alt={plan.name} 
+                <img
+                  src={plan.image}
+                  alt={plan.name}
                   className="w-full h-full object-cover opacity-80"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/60 to-transparent"></div>
-                
+
                 {/* Marquee for Popular Card */}
                 {plan.popular && (
                   <div className="absolute top-4 right-4 z-20">
-                    <motion.div 
+                    <motion.div
                       animate={{ rotate: 360 }}
                       transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
                       className="relative w-16 h-16"
@@ -165,7 +165,7 @@ export default function CassiePricing() {
 
               {/* Content Section */}
               <div className="p-6 md:p-8 flex flex-col flex-grow -mt-8 relative z-10">
-                
+
                 {/* Plan Name & Savings */}
                 <div className="flex justify-between items-start mb-2">
                   <div>
@@ -175,7 +175,7 @@ export default function CassiePricing() {
                     <p className="text-sm font-mono mt-1" style={{ color: plan.color }}>{plan.tagline}</p>
                   </div>
                   {plan.savings && (
-                    <span 
+                    <span
                       className="px-3 py-1 rounded-full border text-xs font-medium whitespace-nowrap ml-2"
                       style={{ borderColor: `${plan.color}50`, color: plan.color }}
                     >
@@ -183,7 +183,7 @@ export default function CassiePricing() {
                     </span>
                   )}
                 </div>
-                
+
                 {/* Description */}
                 <p className="text-gray-400 text-sm mb-6 min-h-[40px]">
                   {plan.description}
@@ -196,17 +196,17 @@ export default function CassiePricing() {
                 </div>
 
                 {/* Action Button */}
-                <button 
-                  className={`w-full py-3.5 rounded-full font-bold mb-8 transition-all duration-300 flex items-center justify-center gap-2 group ${
-                    plan.popular
+                <Link
+                  href="/onboarding"
+                  className={`w-full py-3.5 rounded-full font-bold mb-8 transition-all duration-300 flex items-center justify-center gap-2 group ${plan.popular
                       ? 'text-[#1E1B4B] hover:opacity-90'
                       : 'bg-transparent border border-white/20 text-white hover:bg-white/5'
-                  }`}
+                    }`}
                   style={{ backgroundColor: plan.popular ? plan.color : 'transparent' }}
                 >
-                  Kích hoạt Cassie ngay
+                  ⚡ Kích hoạt ngay
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
+                </Link>
 
                 {/* Guarantee */}
                 <div className="flex items-center gap-2 mb-6 text-sm text-white font-medium">

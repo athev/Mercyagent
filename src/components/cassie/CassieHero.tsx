@@ -3,6 +3,7 @@
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 import { Sparkles, Play } from "lucide-react";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 interface ParticleConfig {
   count?: number;
@@ -13,7 +14,7 @@ interface ParticleConfig {
   maxSize?: number;
 }
 
-export default function CassieHero({ 
+export default function CassieHero({
   particleConfig = {
     count: 30,
     minSpeed: 10,
@@ -22,8 +23,8 @@ export default function CassieHero({
     minSize: 1,
     maxSize: 4
   }
-}: { 
-  particleConfig?: ParticleConfig 
+}: {
+  particleConfig?: ParticleConfig
 }) {
   const [mounted, setMounted] = useState(false);
   const { count = 30, minSpeed = 10, maxSpeed = 30, color = "bg-blue-400/40", minSize = 1, maxSize = 4 } = particleConfig;
@@ -40,16 +41,16 @@ export default function CassieHero({
   // Transform mouse position into subtle movement offsets for different layers
   const orb1X = useTransform(smoothMouseX, [-1, 1], [-30, 30]);
   const orb1Y = useTransform(smoothMouseY, [-1, 1], [-30, 30]);
-  
+
   const orb2X = useTransform(smoothMouseX, [-1, 1], [40, -40]);
   const orb2Y = useTransform(smoothMouseY, [-1, 1], [40, -40]);
-  
+
   const orb3X = useTransform(smoothMouseX, [-1, 1], [-50, 50]);
   const orb3Y = useTransform(smoothMouseY, [-1, 1], [50, -50]);
 
   useEffect(() => {
     setMounted(true);
-    
+
     // Handle mouse move
     const handleMouseMove = (e: MouseEvent) => {
       // Normalize mouse position from -1 to 1
@@ -76,7 +77,7 @@ export default function CassieHero({
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
         {/* Deep background color */}
         <div className="absolute inset-0 bg-[#030712]"></div>
-        
+
         {/* Subtle grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"></div>
 
@@ -95,7 +96,7 @@ export default function CassieHero({
           }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#1e3a8a_0%,#3b82f6_50%,#1e3a8a_100%)] blur-[120px] md:blur-[160px] opacity-40"
         />
-        
+
         {/* Secondary orb */}
         <motion.div
           style={{ x: orb2X, y: orb2Y }}
@@ -213,15 +214,15 @@ export default function CassieHero({
           transition={{ duration: 1, delay: 1.2, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
         >
-          <button className="group relative w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 text-white font-medium text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)]">
+          <Link href="/onboarding" className="group relative w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 text-white font-medium text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)]">
             <div className="absolute inset-0 bg-gradient-to-r from-blue-400/0 via-white/20 to-blue-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out" />
-            <span className="relative z-10">Thuê CASSIE ngay</span>
-          </button>
-          
-          <button className="group flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 text-white font-medium text-lg border border-white/10 hover:bg-white/10 transition-all hover:border-white/20">
+            <span className="relative z-10">⚡ Kích hoạt CASSIE ngay</span>
+          </Link>
+
+          <Link href="/onboarding" className="group flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 text-white font-medium text-lg border border-white/10 hover:bg-white/10 transition-all hover:border-white/20">
             <Play className="w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors" />
-            <span>Xem CASSIE hoạt động</span>
-          </button>
+            <span>Trải nghiệm miễn phí</span>
+          </Link>
         </motion.div>
       </div>
     </section>

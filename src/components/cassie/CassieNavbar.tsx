@@ -30,8 +30,8 @@ export default function CassieNavbar() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1] }}
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-                    ? "bg-[#030712]/80 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
-                    : "bg-transparent"
+                ? "bg-[#030712]/80 backdrop-blur-xl border-b border-white/[0.06] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+                : "bg-transparent"
                 }`}
         >
             <div className="max-w-7xl mx-auto px-6 h-16 md:h-18 flex items-center justify-between">
@@ -90,8 +90,8 @@ export default function CassieNavbar() {
                             href={link.href}
                             onClick={() => setActiveLink(link.href)}
                             className={`relative px-4 py-2 text-sm font-medium transition-colors duration-200 rounded-lg group ${activeLink === link.href
-                                    ? "text-blue-300"
-                                    : "text-white/50 hover:text-white/90"
+                                ? "text-blue-300"
+                                : "text-white/50 hover:text-white/90"
                                 }`}
                         >
                             {/* Hover background */}
@@ -100,8 +100,8 @@ export default function CassieNavbar() {
                             {/* Active / hover underline */}
                             <span
                                 className={`absolute bottom-1 left-1/2 -translate-x-1/2 h-px bg-gradient-to-r from-transparent via-blue-400 to-transparent transition-all duration-300 ${activeLink === link.href
-                                        ? "w-3/4 opacity-100"
-                                        : "w-0 opacity-0 group-hover:w-3/4 group-hover:opacity-60"
+                                    ? "w-3/4 opacity-100"
+                                    : "w-0 opacity-0 group-hover:w-3/4 group-hover:opacity-60"
                                     }`}
                             />
                         </a>
@@ -123,7 +123,7 @@ export default function CassieNavbar() {
 
                     {/* CTA Button */}
                     <motion.a
-                        href="#pricing"
+                        href="/onboarding"
                         whileHover={{ scale: 1.03 }}
                         whileTap={{ scale: 0.97 }}
                         className="relative group flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white overflow-hidden"
@@ -136,7 +136,7 @@ export default function CassieNavbar() {
                         <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_25px_rgba(59,130,246,0.5)] blur-sm" />
 
                         <Zap className="relative w-3.5 h-3.5 text-yellow-300 z-10" />
-                        <span className="relative z-10">Thuê CASSIE ngay</span>
+                        <span className="relative z-10">⚡ Kích hoạt CASSIE</span>
                     </motion.a>
                 </div>
             </div>

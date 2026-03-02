@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion } from "motion/react";
 import { Sparkles, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function CassieCTA() {
   const [mounted, setMounted] = useState(false);
@@ -21,33 +22,33 @@ export default function CassieCTA() {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 relative z-10 text-center">
-        
+
         {/* Cassie Meditating on Digital Cloud */}
         <div className="mb-16 relative">
           {/* Digital Cloud Effect */}
-          <motion.div 
-            animate={{ 
+          <motion.div
+            animate={{
               scale: [1, 1.1, 1],
               opacity: [0.3, 0.5, 0.3]
             }}
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-24 bg-cyan-400/20 blur-3xl rounded-[100%]"
           ></motion.div>
-          
+
           <motion.div
             animate={{ y: [0, -15, 0] }}
             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
             className="relative z-20"
           >
-            <img 
-              src="/agents/cassie.png" 
-              alt="Cassie Meditating" 
+            <img
+              src="/agents/cassie.png"
+              alt="Cassie Meditating"
               className="w-48 h-48 mx-auto object-contain drop-shadow-[0_0_30px_rgba(34,211,238,0.3)]"
               referrerPolicy="no-referrer"
             />
-            
+
             {/* Meditation Aura */}
-            <motion.div 
+            <motion.div
               animate={{ scale: [1, 1.5, 1], opacity: [0, 0.2, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
               className="absolute inset-0 border border-cyan-400/30 rounded-full scale-0"
@@ -89,15 +90,15 @@ export default function CassieCTA() {
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 2.5 }}
         >
-          <button className="group relative px-6 sm:px-10 py-4 sm:py-5 bg-white text-black rounded-full font-bold text-base sm:text-lg overflow-hidden transition-all hover:pr-14 active:scale-95">
+          <Link href="/onboarding" className="group relative inline-flex px-6 sm:px-10 py-4 sm:py-5 bg-white text-black rounded-full font-bold text-base sm:text-lg overflow-hidden transition-all hover:pr-14 active:scale-95">
             <span className="relative z-10 flex items-center gap-2">
-              Dùng thử 7 ngày miễn phí
+              ⚡ Kích hoạt CASSIE miễn phí
               <Sparkles className="w-5 h-5 text-cyan-500" />
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-100 to-white opacity-0 group-hover:opacity-100 transition-opacity"></div>
             <ArrowRight className="absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0" />
-          </button>
-          
+          </Link>
+
           <p className="mt-6 text-gray-500 text-sm font-light">
             Không cần thẻ tín dụng. Cài đặt trong 5 phút.
           </p>
@@ -109,19 +110,19 @@ export default function CassieCTA() {
       {mounted && [...Array(15)].map((_, i) => (
         <motion.div
           key={i}
-          initial={{ 
-            x: Math.random() * 100 - 50 + "%", 
+          initial={{
+            x: Math.random() * 100 - 50 + "%",
             y: Math.random() * 100 - 50 + "%",
-            opacity: 0 
+            opacity: 0
           }}
-          animate={{ 
+          animate={{
             y: ["-10%", "10%"],
             opacity: [0, 0.3, 0]
           }}
-          transition={{ 
-            duration: 5 + Math.random() * 5, 
-            repeat: Infinity, 
-            delay: Math.random() * 5 
+          transition={{
+            duration: 5 + Math.random() * 5,
+            repeat: Infinity,
+            delay: Math.random() * 5
           }}
           className="absolute w-1 h-1 bg-cyan-400 rounded-full blur-[1px] pointer-events-none"
         ></motion.div>

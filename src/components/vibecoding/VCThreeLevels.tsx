@@ -11,7 +11,7 @@ const levels = [
         description:
             "Build MVP & Validate Idea trong 24h. Biến ý tưởng mơ hồ thành prototype hoạt động được, nhanh chóng test thị trường.",
         skills: ["Vibe Coding Basics", "Rapid Prototyping", "AI Prompt Engineering", "MVP Validation"],
-        color: "#C6FF00",
+        color: "var(--vc-lime)",
         icon: (
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
@@ -25,7 +25,7 @@ const levels = [
         description:
             "Xây dựng SaaS, Automation System thực thụ. Code sạch, bảo mật, scalable — sẵn sàng cho người dùng thật.",
         skills: ["Clean Architecture", "Security First", "Database Design", "API Development"],
-        color: "#00E5FF",
+        color: "var(--vc-chrome)",
         icon: (
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
@@ -39,7 +39,7 @@ const levels = [
         description:
             "Design hệ thống lớn cho Team Dev vận hành. Tư duy kiến trúc, quản lý dự án, và monetization strategy.",
         skills: ["System Design", "Team Management", "Product Strategy", "Revenue Models"],
-        color: "#FF6B00",
+        color: "#60a5fa", // tailwind blue-400
         icon: (
             <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
@@ -70,8 +70,8 @@ export default function VCThreeLevels() {
                     transition={{ duration: 0.6 }}
                     className="flex items-center gap-3 mb-4"
                 >
-                    <div className="w-8 h-[1px] bg-[#C6FF00]" />
-                    <span className="text-[#C6FF00] text-xs font-mono tracking-widest uppercase">
+                    <div className="w-8 h-[1px] bg-[var(--vc-lime)]" />
+                    <span className="text-[var(--vc-lime)] text-xs font-mono tracking-widest uppercase">
                         Section 03 — Lộ trình
                     </span>
                 </motion.div>
@@ -84,7 +84,7 @@ export default function VCThreeLevels() {
                     style={{ fontFamily: "Space Grotesk, sans-serif" }}
                 >
                     3 CẤP ĐỘ CỦA{" "}
-                    <span className="text-[#C6FF00]">VIBE CODING</span>
+                    <span className="text-[var(--vc-lime)]">VIBE CODING</span>
                 </motion.h2>
 
                 <motion.p
@@ -122,8 +122,8 @@ export default function VCThreeLevels() {
                         >
                             <div
                                 className={`w-12 h-12 rounded-full border-2 flex items-center justify-center font-bold text-sm transition-all duration-500 ${i <= activeLevel
-                                        ? "border-transparent text-[#0A0A0A]"
-                                        : "border-[#333] bg-[#141414] text-[#555]"
+                                    ? "border-transparent text-[#0A0A0A]"
+                                    : "border-[#333] bg-[#141414] text-[#555]"
                                     }`}
                                 style={
                                     i <= activeLevel
@@ -226,6 +226,27 @@ export default function VCThreeLevels() {
                         </div>
                     </div>
                 </motion.div>
+
+                {/* Next level navigation */}
+                {activeLevel < levels.length - 1 && (
+                    <motion.div
+                        key={`next-${activeLevel}`}
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.4, delay: 0.3 }}
+                        className="flex justify-end mt-4"
+                    >
+                        <button
+                            onClick={() => setActiveLevel(activeLevel + 1)}
+                            className="flex items-center gap-2 px-4 py-2 rounded-lg border border-[#333] bg-[#141414] hover:border-[var(--vc-lime)]/40 text-[#888] hover:text-[var(--vc-lime)] text-xs font-mono tracking-wider transition-all duration-300"
+                        >
+                            Xem Level {activeLevel + 2}: {levels[activeLevel + 1].title}
+                            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
+                        </button>
+                    </motion.div>
+                )}
             </div>
         </section>
     );

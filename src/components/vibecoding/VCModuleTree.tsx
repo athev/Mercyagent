@@ -6,72 +6,72 @@ import { useRef, useState } from "react";
 const modules = [
     {
         tier: "FOUNDATION",
-        tierColor: "#C6FF00",
+        tierColor: "var(--vc-lime)",
         items: [
             {
                 id: 1,
                 title: "AI-First Mindset",
-                desc: "Tư duy kiến trúc sư: Từ Syntax Slave → Architecture Master. Hiểu cách AI thay đổi quy trình phát triển phần mềm.",
+                desc: "Từ Syntax Slave → Architecture Master. Outcome: Biết cách điều phối AI thay vì bị thay thế bởi AI.",
                 icon: "🧠",
             },
             {
                 id: 2,
                 title: "Vibe Coding Mastery",
-                desc: "Phương pháp Brain-to-Spec: Chuyển hóa ý tưởng mơ hồ thành Technical Specification cứng nhắc với Gemini + NotebookLLM.",
+                desc: "Kỹ năng Brain-to-Spec với Gemini + NotebookLLM. Outcome: Sáng tác tài liệu kĩ thuật (Technical Spec) cứng nhắc chỉ từ một ý tưởng mơ hồ.",
                 icon: "⚡",
             },
             {
                 id: 3,
                 title: "Tech Stack Selection",
-                desc: "Chọn đúng công nghệ, thiết kế Database & API Flow trước khi viết một dòng code nào. Blueprint trước, Code sau.",
+                desc: "Blueprint trước, Code sau. Outcome: Lên thiết kế Database & API Flow chuẩn xác trước khi viết một dòng code nào.",
                 icon: "🏗️",
             },
         ],
     },
     {
         tier: "CORE",
-        tierColor: "#00E5FF",
+        tierColor: "var(--vc-chrome)",
         items: [
             {
                 id: 4,
                 title: "Multi-Agent Orchestra",
-                desc: "Điều khiển 12 Agent chuyên biệt: Skeptic, Security Guard, Refactor King, PM, DevOps... như một dàn nhạc giao hưởng.",
+                desc: "Học cách điều khiển 12 AI Agent chuyên biệt. Outcome: Trở thành nhạc trưởng điều hành dàn giao hưởng AI tự động viết code.",
                 icon: "🎼",
             },
             {
                 id: 5,
                 title: "Clean Code & Architecture",
-                desc: "Code đạt chuẩn Modular, SOLID principles. Kỹ thuật đập đi xây lại để luôn duy trì chất lượng Production-grade.",
+                desc: "Kỹ thuật đập đi xây lại liên tục. Outcome: Code đạt chuẩn Production-grade, đảm bảo bảo hành 10 năm thay vì đồ án môn học.",
                 icon: "💎",
             },
             {
                 id: 6,
                 title: "Security Barricade",
-                desc: "Quản lý Secrets, Rate Limit, Data Protection, Sandboxing. Build phần mềm chạy 10 năm, không phải demo 10 phút.",
+                desc: "Quản lý Secrets, Sandboxing. Outcome: Hệ thống tự động của bạn được bảo mật tuyệt đối trước các hiểm hoạ rò rỉ dữ liệu.",
                 icon: "🛡️",
             },
         ],
     },
     {
         tier: "GROWTH",
-        tierColor: "#FF6B00",
+        tierColor: "#60a5fa", // tailwind blue-400
         items: [
             {
                 id: 7,
                 title: "Project Management",
-                desc: "Quản lý dự án với AI: Timeline, Sprint Planning, Task Decomposition. Từ solo coder thành Tech Lead.",
+                desc: "Quản lý AI Tasks với Sprint Planning. Outcome: Tự động phân chia Task cho AI để quản lý dự án quy mô lớn một mình.",
                 icon: "📋",
             },
             {
                 id: 8,
                 title: "Product Building",
-                desc: "Product Thinking — tư duy sản phẩm là vị vua mới. Validation, UX, Market Fit. Build thứ người ta muốn trả tiền.",
+                desc: "Market Fit & UX. Outcome: Thành thạo tư duy làm Sản Phẩm - Xây thứ thị trường muốn và sẵn mặt trả tiền.",
                 icon: "🚀",
             },
             {
                 id: 9,
                 title: "Monetization",
-                desc: "Auto-Deploy & Monetize: Đóng gói thành Micro-SaaS, đưa lên kệ tạo ra tiền. Từ code thành cash flow.",
+                desc: "Auto-Deploy & Đóng gói Micro-SaaS. Outcome: Hoàn thiện được một Micro-SaaS và bắt đầu biến Code thành tiền (Cash flow).",
                 icon: "💰",
             },
         ],
@@ -99,8 +99,8 @@ export default function VCModuleTree() {
                     transition={{ duration: 0.6 }}
                     className="flex items-center gap-3 mb-4"
                 >
-                    <div className="w-8 h-[1px] bg-[#C6FF00]" />
-                    <span className="text-[#C6FF00] text-xs font-mono tracking-widest uppercase">
+                    <div className="w-8 h-[1px] bg-[var(--vc-lime)]" />
+                    <span className="text-[var(--vc-lime)] text-xs font-mono tracking-widest uppercase">
                         Section 04 — Chương trình đào tạo
                     </span>
                 </motion.div>
@@ -113,7 +113,7 @@ export default function VCModuleTree() {
                     style={{ fontFamily: "Space Grotesk, sans-serif" }}
                 >
                     9-MODULE{" "}
-                    <span className="text-[#C6FF00]">BLUEPRINT</span>
+                    <span className="text-[var(--vc-lime)]">BLUEPRINT</span>
                 </motion.h2>
 
                 <motion.p
@@ -124,6 +124,12 @@ export default function VCModuleTree() {
                 >
                     Cây kỹ năng được thiết kế có hệ thống: từ nền tảng tư duy → core engineering → tăng trưởng & kiếm tiền.
                 </motion.p>
+
+                {/* Click hint — visible above module cards */}
+                <div className="flex items-center gap-2 mb-6 px-4 py-2.5 rounded-lg border border-[var(--vc-lime)]/10 bg-[var(--vc-lime)]/[0.03] w-fit">
+                    <span className="text-sm">👆</span>
+                    <span className="text-[#888] text-xs font-mono tracking-wide">Click vào từng module để xem chi tiết nội dung</span>
+                </div>
 
                 {/* Tech Tree */}
                 <div className="space-y-8">
@@ -161,8 +167,8 @@ export default function VCModuleTree() {
                                             key={mod.id}
                                             onClick={() => setExpandedModule(isExpanded ? null : mod.id)}
                                             className={`group text-left rounded-xl border p-5 transition-all duration-500 relative overflow-hidden ${isExpanded
-                                                    ? "bg-[#1a1a1a]"
-                                                    : "bg-[#141414] hover:bg-[#1a1a1a]"
+                                                ? "bg-[#1a1a1a]"
+                                                : "bg-[#141414] hover:bg-[#1a1a1a]"
                                                 }`}
                                             style={{
                                                 borderColor: isExpanded ? `${tier.tierColor}40` : "#222",
@@ -229,17 +235,7 @@ export default function VCModuleTree() {
                     ))}
                 </div>
 
-                {/* Connection hint */}
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={isInView ? { opacity: 1 } : {}}
-                    transition={{ delay: 1 }}
-                    className="mt-8 text-center"
-                >
-                    <p className="text-[10px] font-mono text-[#555] tracking-wider">
-                        CLICK VÀO TỪNG MODULE ĐỂ XEM CHI TIẾT NỘI DUNG
-                    </p>
-                </motion.div>
+
             </div>
         </section>
     );

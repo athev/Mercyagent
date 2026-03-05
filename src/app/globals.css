@@ -151,21 +151,21 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
-   VIBE CODING — Industrial Cyberpunk Theme
+   VIBE CODING — Cassie Blue Theme
    ============================================ */
 
 :root {
-  --vc-bg: #0A0A0A;
-  --vc-bg-alt: #111111;
-  --vc-bg-card: #141414;
-  --vc-lime: #C6FF00;
-  --vc-lime-dim: rgba(198, 255, 0, 0.15);
-  --vc-lime-glow: rgba(198, 255, 0, 0.4);
-  --vc-chrome: #C0C0C0;
-  --vc-chrome-dim: rgba(192, 192, 192, 0.5);
-  --vc-white: #E8E8E8;
-  --vc-gray: #888888;
-  --vc-dark-gray: #333333;
+  --vc-bg: #030712;
+  --vc-bg-alt: #050a15;
+  --vc-bg-card: #0a0505;
+  --vc-lime: #3b82f6; /* Changed to blue-500 */
+  --vc-lime-dim: rgba(59, 130, 246, 0.15);
+  --vc-lime-glow: rgba(59, 130, 246, 0.4);
+  --vc-chrome: #93c5fd; /* light blue */
+  --vc-chrome-dim: rgba(147, 197, 253, 0.5);
+  --vc-white: #eff6ff;
+  --vc-gray: #9ca3af;
+  --vc-dark-gray: #1e3a8a;
 }
 
 /* Terminal cursor blink */
@@ -194,22 +194,22 @@ h1, h2, h3, h4, h5, h6 {
   100% { top: 105%; }
 }
 
-/* Lime glow pulse */
+/* Lime glow pulse -> Blue glow pulse */
 @keyframes vc-glow-pulse {
-  0%, 100% { box-shadow: 0 0 20px rgba(198, 255, 0, 0.3), 0 0 40px rgba(198, 255, 0, 0.1); }
-  50% { box-shadow: 0 0 30px rgba(198, 255, 0, 0.6), 0 0 60px rgba(198, 255, 0, 0.2); }
+  0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.3), 0 0 40px rgba(59, 130, 246, 0.1); }
+  50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.2); }
 }
 
-/* Lime text glow */
+/* Lime text glow -> Blue text glow */
 @keyframes vc-text-glow {
-  0%, 100% { text-shadow: 0 0 10px rgba(198, 255, 0, 0.5); }
-  50% { text-shadow: 0 0 20px rgba(198, 255, 0, 0.8), 0 0 40px rgba(198, 255, 0, 0.3); }
+  0%, 100% { text-shadow: 0 0 10px rgba(59, 130, 246, 0.5); }
+  50% { text-shadow: 0 0 20px rgba(59, 130, 246, 0.8), 0 0 40px rgba(59, 130, 246, 0.3); }
 }
 
-/* Node pulse for tech tree */
+/* Node pulse for tech tree -> Blue */
 @keyframes vc-node-pulse {
-  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(198, 255, 0, 0.4); }
-  50% { transform: scale(1.05); box-shadow: 0 0 20px 5px rgba(198, 255, 0, 0.2); }
+  0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4); }
+  50% { transform: scale(1.05); box-shadow: 0 0 20px 5px rgba(59, 130, 246, 0.2); }
 }
 
 /* Orbit rotation */
@@ -243,7 +243,7 @@ h1, h2, h3, h4, h5, h6 {
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, rgba(198, 255, 0, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
   animation: vc-scanline 4s linear infinite;
   pointer-events: none;
   z-index: 50;
@@ -259,8 +259,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .vc-grid-bg {
   background-image:
-    linear-gradient(rgba(198, 255, 0, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(198, 255, 0, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -274,15 +274,15 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
 }
 
-/* Scrollbar for cyberpunk */
+/* Scrollbar for cyberpunk -> Cassie theme */
 .vc-scrollbar::-webkit-scrollbar {
   width: 4px;
   height: 4px;
 }
 .vc-scrollbar::-webkit-scrollbar-track {
-  background: #0A0A0A;
+  background: #030712;
 }
 .vc-scrollbar::-webkit-scrollbar-thumb {
-  background: #C6FF00;
+  background: #3b82f6;
   border-radius: 2px;
 }

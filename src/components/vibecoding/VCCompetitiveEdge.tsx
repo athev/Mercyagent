@@ -84,8 +84,8 @@ export default function VCCompetitiveEdge() {
                     transition={{ duration: 0.6 }}
                     className="flex items-center gap-3 mb-4"
                 >
-                    <div className="w-8 h-[1px] bg-[#C6FF00]" />
-                    <span className="text-[#C6FF00] text-xs font-mono tracking-widest uppercase">
+                    <div className="w-8 h-[1px] bg-[var(--vc-lime)]" />
+                    <span className="text-[var(--vc-lime)] text-xs font-mono tracking-widest uppercase">
                         Section 06 — Lợi thế cạnh tranh
                     </span>
                 </motion.div>
@@ -98,7 +98,7 @@ export default function VCCompetitiveEdge() {
                     style={{ fontFamily: "Space Grotesk, sans-serif" }}
                 >
                     TẠI SAO{" "}
-                    <span className="text-[#C6FF00]">AI ENGINEER THẮNG?</span>
+                    <span className="text-[var(--vc-lime)]">AI ENGINEER THẮNG?</span>
                 </motion.h2>
 
                 <motion.p
@@ -108,8 +108,8 @@ export default function VCCompetitiveEdge() {
                     className="text-[#888] text-base md:text-lg max-w-2xl mb-12"
                 >
                     &ldquo;Khi tất cả đều có AI, lợi thế thuộc về người{" "}
-                    <span className="text-[#C6FF00] font-semibold">build nhanh hơn</span> và{" "}
-                    <span className="text-[#C6FF00] font-semibold">thử nhanh hơn</span>.&rdquo;
+                    <span className="text-[var(--vc-lime)] font-semibold">build nhanh hơn</span> và{" "}
+                    <span className="text-[var(--vc-lime)] font-semibold">thử nhanh hơn</span>.&rdquo;
                 </motion.p>
 
                 {/* Edge Cards */}
@@ -120,16 +120,16 @@ export default function VCCompetitiveEdge() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: 0.3 + i * 0.1 }}
-                            className="group rounded-xl border border-[#222] bg-[#141414] p-6 hover:border-[#C6FF00]/30 transition-all duration-500 relative overflow-hidden"
+                            className="group rounded-xl border border-[#222] bg-[#141414] p-6 hover:border-[var(--vc-lime)]/30 transition-all duration-500 relative overflow-hidden"
                         >
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#C6FF00]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-[var(--vc-lime)]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                             <div className="relative z-10">
                                 <span className="text-2xl mb-3 block">{edge.icon}</span>
                                 <h3 className="text-[#E8E8E8] font-bold text-sm mb-2" style={{ fontFamily: "Space Grotesk" }}>
                                     {edge.title}
                                 </h3>
                                 <p className="text-[#888] text-xs leading-relaxed mb-4">{edge.desc}</p>
-                                <span className="inline-block px-2 py-0.5 rounded text-[10px] font-mono text-[#C6FF00] bg-[#C6FF00]/10 border border-[#C6FF00]/20">
+                                <span className="inline-block px-2 py-0.5 rounded text-[10px] font-mono text-[var(--vc-lime)] bg-[var(--vc-lime)]/10 border border-[var(--vc-lime)]/20">
                                     {edge.stat}
                                 </span>
                             </div>
@@ -145,7 +145,7 @@ export default function VCCompetitiveEdge() {
                     className="mb-20"
                 >
                     <h3 className="text-2xl md:text-3xl font-bold text-[#E8E8E8] mb-2 tracking-tight" style={{ fontFamily: "Space Grotesk" }}>
-                        TỪ VIBE ĐẾN <span className="text-[#C6FF00]">VALUE</span>
+                        TỪ VIBE ĐẾN <span className="text-[var(--vc-lime)]">VALUE</span>
                     </h3>
                     <p className="text-[#888] text-sm mb-8">
                         Pipeline 4 giai đoạn độc quyền — Quy trình hóa sự sáng tạo.
@@ -158,15 +158,15 @@ export default function VCCompetitiveEdge() {
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                                 transition={{ delay: 0.6 + i * 0.15 }}
-                                className="relative rounded-xl border border-[#222] bg-[#141414] p-5 group hover:border-[#C6FF00]/20 transition-all duration-300"
+                                className="relative rounded-xl border border-[#222] bg-[#141414] p-5 group hover:border-[var(--vc-lime)]/20 transition-all duration-300"
                             >
                                 {/* Phase number */}
-                                <div className="text-4xl font-bold text-[#C6FF00]/10 absolute top-3 right-4" style={{ fontFamily: "Space Grotesk" }}>
+                                <div className="text-4xl font-bold text-[var(--vc-lime)]/10 absolute top-3 right-4" style={{ fontFamily: "Space Grotesk" }}>
                                     {phase.phase}
                                 </div>
 
                                 <div className="relative z-10">
-                                    <h4 className="text-[#C6FF00] text-xs font-mono tracking-wider mb-2">
+                                    <h4 className="text-[var(--vc-lime)] text-xs font-mono tracking-wider mb-2">
                                         PHASE {phase.phase}
                                     </h4>
                                     <h5 className="text-[#E8E8E8] font-bold text-sm mb-2" style={{ fontFamily: "Space Grotesk" }}>
@@ -200,11 +200,11 @@ export default function VCCompetitiveEdge() {
                     transition={{ delay: 0.8 }}
                 >
                     <h3 className="text-2xl md:text-3xl font-bold text-[#E8E8E8] mb-2 tracking-tight" style={{ fontFamily: "Space Grotesk" }}>
-                        SECURITY <span className="text-[#C6FF00]">BARRICADE</span>
+                        SECURITY <span className="text-[var(--vc-lime)]">BARRICADE</span>
                     </h3>
                     <p className="text-[#888] text-sm mb-8 max-w-xl">
                         &ldquo;AI có thể viết code nhanh, nhưng nó không biết{" "}
-                        <span className="text-[#C6FF00]">bảo mật sự nghiệp</span> của bạn.&rdquo;
+                        <span className="text-[var(--vc-lime)]">bảo mật sự nghiệp</span> của bạn.&rdquo;
                         — 90% khóa học ngoài kia đang dạy bạn cách &ldquo;lộ hàng&rdquo;.
                     </p>
 
@@ -226,10 +226,10 @@ export default function VCCompetitiveEdge() {
                         ))}
                     </div>
 
-                    <div className="mt-6 rounded-lg border border-[#C6FF00]/10 bg-[#C6FF00]/[0.03] px-6 py-4">
+                    <div className="mt-6 rounded-lg border border-[var(--vc-lime)]/10 bg-[var(--vc-lime)]/[0.03] px-6 py-4">
                         <p className="text-[#888] text-xs font-mono text-center tracking-wider">
                             &ldquo;Chúng ta build phần mềm để chạy{" "}
-                            <span className="text-[#C6FF00] font-bold">10 năm</span>, không phải để demo trong{" "}
+                            <span className="text-[var(--vc-lime)] font-bold">10 năm</span>, không phải để demo trong{" "}
                             <span className="text-[#C0C0C0]">10 phút</span>.&rdquo;
                         </p>
                     </div>

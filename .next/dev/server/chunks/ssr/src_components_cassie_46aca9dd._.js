@@ -282,7 +282,7 @@ function CassieNavbar() {
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].a, {
-                                href: "#pricing",
+                                href: "/onboarding",
                                 whileHover: {
                                     scale: 1.03
                                 },
@@ -321,7 +321,7 @@ function CassieNavbar() {
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "relative z-10",
-                                        children: "Thuê CASSIE ngay"
+                                        children: "⚡ Kích hoạt CASSIE"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieNavbar.tsx",
                                         lineNumber: 139,
@@ -383,7 +383,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-ssr] (ecmascript) <export default as Sparkles>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/play.js [app-ssr] (ecmascript) <export default as Play>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -483,14 +485,14 @@ function CassieHero({ particleConfig = {
                         className: "absolute inset-0 bg-[#030712]"
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 78,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20"
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 81,
+                        lineNumber: 82,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -523,7 +525,7 @@ function CassieHero({ particleConfig = {
                         className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] rounded-full bg-[conic-gradient(from_90deg_at_50%_50%,#1e3a8a_0%,#3b82f6_50%,#1e3a8a_100%)] blur-[120px] md:blur-[160px] opacity-40"
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 84,
+                        lineNumber: 85,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -546,7 +548,7 @@ function CassieHero({ particleConfig = {
                         className: "absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-indigo-600/30 blur-[100px]"
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 100,
+                        lineNumber: 101,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -569,7 +571,7 @@ function CassieHero({ particleConfig = {
                         className: "absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-cyan-500/20 blur-[120px]"
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 114,
+                        lineNumber: 115,
                         columnNumber: 9
                     }, this),
                     mounted && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -608,19 +610,19 @@ function CassieHero({ particleConfig = {
                                 }
                             }, i, false, {
                                 fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                lineNumber: 133,
+                                lineNumber: 134,
                                 columnNumber: 17
                             }, this);
                         })
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 129,
+                        lineNumber: 130,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                lineNumber: 76,
+                lineNumber: 77,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -645,20 +647,20 @@ function CassieHero({ particleConfig = {
                                 className: "w-4 h-4"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                lineNumber: 170,
+                                lineNumber: 171,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                 children: "AI Support & Sales Assistant"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                lineNumber: 171,
+                                lineNumber: 172,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 164,
+                        lineNumber: 165,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h1, {
@@ -684,7 +686,7 @@ function CassieHero({ particleConfig = {
                         children: "Hi Sếp, CASSIE đây."
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 174,
+                        lineNumber: 175,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -705,7 +707,7 @@ function CassieHero({ particleConfig = {
                         children: "CASSIE giúp Sếp không bỏ lỡ bất kỳ khách hàng nào."
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 184,
+                        lineNumber: 185,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -729,19 +731,19 @@ function CassieHero({ particleConfig = {
                                         className: "w-1.5 h-1.5 rounded-full bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.8)]"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                        lineNumber: 203,
+                                        lineNumber: 204,
                                         columnNumber: 15
                                     }, this),
                                     line
                                 ]
                             }, index, true, {
                                 fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                lineNumber: 196,
+                                lineNumber: 197,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 194,
+                        lineNumber: 195,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -760,69 +762,71 @@ function CassieHero({ particleConfig = {
                         },
                         className: "flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/onboarding",
                                 className: "group relative w-full sm:w-auto px-8 py-4 rounded-full bg-blue-600 text-white font-medium text-lg overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_40px_rgba(37,99,235,0.4)]",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute inset-0 bg-gradient-to-r from-blue-400/0 via-white/20 to-blue-400/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700 ease-in-out"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                        lineNumber: 217,
+                                        lineNumber: 218,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "relative z-10",
-                                        children: "Thuê CASSIE ngay"
+                                        children: "⚡ Kích hoạt CASSIE ngay"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                        lineNumber: 218,
+                                        lineNumber: 219,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                lineNumber: 216,
+                                lineNumber: 217,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/onboarding",
                                 className: "group flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 rounded-full bg-white/5 text-white font-medium text-lg border border-white/10 hover:bg-white/10 transition-all hover:border-white/20",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$play$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Play$3e$__["Play"], {
                                         className: "w-5 h-5 text-blue-400 group-hover:text-blue-300 transition-colors"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                        lineNumber: 222,
+                                        lineNumber: 223,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        children: "Xem CASSIE hoạt động"
+                                        children: "Trải nghiệm miễn phí"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                        lineNumber: 223,
+                                        lineNumber: 224,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                                lineNumber: 221,
+                                lineNumber: 222,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                        lineNumber: 210,
+                        lineNumber: 211,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cassie/CassieHero.tsx",
-                lineNumber: 163,
+                lineNumber: 164,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/cassie/CassieHero.tsx",
-        lineNumber: 74,
+        lineNumber: 75,
         columnNumber: 5
     }, this);
 }
@@ -5248,7 +5252,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$re
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$zap$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Zap$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/zap.js [app-ssr] (ecmascript) <export default as Zap>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-ssr] (ecmascript) <export default as Sparkles>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-ssr] (ecmascript) <export default as ArrowRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -5317,14 +5323,14 @@ function CassiePricing() {
                 className: "absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[600px] bg-[#4C1D95]/10 blur-[150px] rounded-full pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                lineNumber: 67,
+                lineNumber: 68,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#93C5FD]/5 blur-[120px] rounded-full pointer-events-none"
             }, void 0, false, {
                 fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                lineNumber: 68,
+                lineNumber: 69,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5351,7 +5357,7 @@ function CassiePricing() {
                                         className: "w-2 h-2 rounded-full bg-[#FDE68A] animate-pulse shadow-[0_0_10px_#FDE68A]"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                                        lineNumber: 80,
+                                        lineNumber: 81,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -5362,13 +5368,13 @@ function CassiePricing() {
                                         children: "Hợp đồng tín nhiệm"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                                        lineNumber: 81,
+                                        lineNumber: 82,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                                lineNumber: 74,
+                                lineNumber: 75,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h2, {
@@ -5397,13 +5403,13 @@ function CassiePricing() {
                                         children: "thảnh thơi"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                                        lineNumber: 94,
+                                        lineNumber: 95,
                                         columnNumber: 27
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                                lineNumber: 86,
+                                lineNumber: 87,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].p, {
@@ -5427,20 +5433,20 @@ function CassiePricing() {
                                         className: "w-5 h-5 text-amber-400"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 104,
                                         columnNumber: 13
                                     }, this),
                                     '"Chi phí của một ly cà phê mỗi ngày cho một nhân sự 24/7."'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                                lineNumber: 96,
+                                lineNumber: 97,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                        lineNumber: 73,
+                        lineNumber: 74,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5666,13 +5672,14 @@ function CassiePricing() {
                                                 lineNumber: 193,
                                                 columnNumber: 17
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                href: "/onboarding",
                                                 className: `w-full py-3.5 rounded-full font-bold mb-8 transition-all duration-300 flex items-center justify-center gap-2 group ${plan.popular ? 'text-[#1E1B4B] hover:opacity-90' : 'bg-transparent border border-white/20 text-white hover:bg-white/5'}`,
                                                 style: {
                                                     backgroundColor: plan.popular ? plan.color : 'transparent'
                                                 },
                                                 children: [
-                                                    "Kích hoạt Cassie ngay",
+                                                    "⚡ Kích hoạt ngay",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                                         className: "w-4 h-4 group-hover:translate-x-1 transition-transform"
                                                     }, void 0, false, {
@@ -5760,12 +5767,12 @@ function CassiePricing() {
                                 ]
                             }, index, true, {
                                 fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                                lineNumber: 111,
+                                lineNumber: 112,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                        lineNumber: 109,
+                        lineNumber: 110,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5812,13 +5819,13 @@ function CassiePricing() {
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-                lineNumber: 70,
+                lineNumber: 71,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/cassie/CassiePricing.tsx",
-        lineNumber: 65,
+        lineNumber: 66,
         columnNumber: 5
     }, this);
 }
@@ -5835,7 +5842,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/framer-motion/dist/es/render/components/motion/proxy.mjs [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sparkles.js [app-ssr] (ecmascript) <export default as Sparkles>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-ssr] (ecmascript) <export default as ArrowRight>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-ssr] (ecmascript)");
 "use client";
+;
 ;
 ;
 ;
@@ -5855,27 +5864,27 @@ function CassieCTA() {
                         className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-cyan-500/5 blur-[160px] rounded-full"
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                        lineNumber: 18,
+                        lineNumber: 19,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute bottom-0 left-0 w-full h-1/2 bg-gradient-to-t from-cyan-500/10 to-transparent blur-3xl opacity-30"
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                        lineNumber: 19,
+                        lineNumber: 20,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "absolute top-0 right-0 w-full h-1/2 bg-gradient-to-b from-purple-500/5 to-transparent blur-3xl opacity-20"
                     }, void 0, false, {
                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                        lineNumber: 20,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                lineNumber: 17,
+                lineNumber: 18,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5905,7 +5914,7 @@ function CassieCTA() {
                                 className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-24 bg-cyan-400/20 blur-3xl rounded-[100%]"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                lineNumber: 28,
+                                lineNumber: 29,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -5930,7 +5939,7 @@ function CassieCTA() {
                                         referrerPolicy: "no-referrer"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                        lineNumber: 42,
+                                        lineNumber: 43,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -5953,19 +5962,19 @@ function CassieCTA() {
                                         className: "absolute inset-0 border border-cyan-400/30 rounded-full scale-0"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                        lineNumber: 50,
+                                        lineNumber: 51,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                lineNumber: 37,
+                                lineNumber: 38,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                        lineNumber: 26,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -5989,7 +5998,7 @@ function CassieCTA() {
                                 children: "Tôi ở đây để Sếp được nghỉ ngơi"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                lineNumber: 60,
+                                lineNumber: 61,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].h2, {
@@ -6016,7 +6025,7 @@ function CassieCTA() {
                                     '"Khách hàng không cần lý do. ',
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 79,
                                         columnNumber: 42
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -6024,20 +6033,20 @@ function CassieCTA() {
                                         children: "Họ cần phản hồi."
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                        lineNumber: 79,
+                                        lineNumber: 80,
                                         columnNumber: 13
                                     }, this),
                                     '"'
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                lineNumber: 70,
+                                lineNumber: 71,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                        lineNumber: 59,
+                        lineNumber: 60,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -6057,44 +6066,45 @@ function CassieCTA() {
                             delay: 2.5
                         },
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                className: "group relative px-6 sm:px-10 py-4 sm:py-5 bg-white text-black rounded-full font-bold text-base sm:text-lg overflow-hidden transition-all hover:pr-14 active:scale-95",
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                href: "/onboarding",
+                                className: "group relative inline-flex px-6 sm:px-10 py-4 sm:py-5 bg-white text-black rounded-full font-bold text-base sm:text-lg overflow-hidden transition-all hover:pr-14 active:scale-95",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         className: "relative z-10 flex items-center gap-2",
                                         children: [
-                                            "Dùng thử 7 ngày miễn phí",
+                                            "⚡ Kích hoạt CASSIE miễn phí",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sparkles$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Sparkles$3e$__["Sparkles"], {
                                                 className: "w-5 h-5 text-cyan-500"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                                lineNumber: 95,
+                                                lineNumber: 96,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                        lineNumber: 93,
+                                        lineNumber: 94,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "absolute inset-0 bg-gradient-to-r from-cyan-100 to-white opacity-0 group-hover:opacity-100 transition-opacity"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                        lineNumber: 97,
+                                        lineNumber: 98,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
                                         className: "absolute right-6 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                        lineNumber: 98,
+                                        lineNumber: 99,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                lineNumber: 92,
+                                lineNumber: 93,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -6102,19 +6112,19 @@ function CassieCTA() {
                                 children: "Không cần thẻ tín dụng. Cài đặt trong 5 phút."
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                                lineNumber: 101,
+                                lineNumber: 102,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                        lineNumber: 86,
+                        lineNumber: 87,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                lineNumber: 23,
+                lineNumber: 24,
                 columnNumber: 7
             }, this),
             mounted && [
@@ -6144,13 +6154,13 @@ function CassieCTA() {
                     className: "absolute w-1 h-1 bg-cyan-400 rounded-full blur-[1px] pointer-events-none"
                 }, i, false, {
                     fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-                    lineNumber: 110,
+                    lineNumber: 111,
                     columnNumber: 9
                 }, this))
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/cassie/CassieCTA.tsx",
-        lineNumber: 15,
+        lineNumber: 16,
         columnNumber: 5
     }, this);
 }

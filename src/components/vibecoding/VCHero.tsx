@@ -34,7 +34,7 @@ export default function VCHero() {
 
     useEffect(() => {
         setMounted(true);
-        const timer = setTimeout(() => setBootComplete(true), 2200);
+        const timer = setTimeout(() => setBootComplete(true), 1400);
         return () => clearTimeout(timer);
     }, []);
 
@@ -51,7 +51,7 @@ export default function VCHero() {
                     {codeSnippets.map((snippet, i) => (
                         <div
                             key={i}
-                            className="absolute text-[#C6FF00]/[0.06] font-mono text-[10px] whitespace-nowrap"
+                            className="absolute text-[var(--vc-lime)]/10 font-mono text-[10px] whitespace-nowrap"
                             style={{
                                 left: `${(i / codeSnippets.length) * 100}%`,
                                 animation: `vc-code-rain ${8 + Math.random() * 12}s linear ${Math.random() * 5}s infinite`,
@@ -73,7 +73,7 @@ export default function VCHero() {
                     transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
                     className="w-[400px] h-[400px] md:w-[600px] md:h-[600px] rounded-full"
                     style={{
-                        background: "radial-gradient(circle, rgba(198,255,0,0.12) 0%, rgba(198,255,0,0.02) 50%, transparent 70%)",
+                        background: "radial-gradient(circle, var(--vc-lime-dim) 0%, rgba(59,130,246,0.02) 50%, transparent 70%)",
                     }}
                 />
             </div>
@@ -87,7 +87,7 @@ export default function VCHero() {
                 style={{ backgroundColor: "var(--vc-bg)" }}
             >
                 <div className="max-w-lg w-full px-6">
-                    <div className="rounded-lg border border-[#C6FF00]/20 bg-[#0A0A0A] p-6 font-mono text-xs">
+                    <div className="rounded-lg border border-[var(--vc-lime)]/20 bg-[#0A0A0A] p-6 font-mono text-xs">
                         <div className="flex items-center gap-2 mb-4 pb-3 border-b border-[#333]">
                             <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
                             <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
@@ -100,13 +100,13 @@ export default function VCHero() {
                                 initial={{ opacity: 0, x: -10 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: line.delay, duration: 0.3 }}
-                                className={`mb-1.5 ${line.text.includes("[OK]") ? "text-[#C6FF00]" : "text-[#888]"
+                                className={`mb-1.5 ${line.text.includes("[OK]") ? "text-[var(--vc-lime)]" : "text-[#888]"
                                     }`}
                             >
                                 {line.text}
                                 {i === terminalLines.length - 1 && (
                                     <span
-                                        className="inline-block w-2 h-3.5 bg-[#C6FF00] ml-1 align-middle"
+                                        className="inline-block w-2 h-3.5 bg-[var(--vc-lime)] ml-1 align-middle"
                                         style={{ animation: "vc-cursor-blink 1s step-end infinite" }}
                                     />
                                 )}
@@ -125,8 +125,8 @@ export default function VCHero() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="mb-8"
                 >
-                    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#C6FF00]/20 bg-[#C6FF00]/5 text-[#C6FF00] text-xs font-mono tracking-wider">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#C6FF00] animate-pulse" />
+                    <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[var(--vc-lime)]/20 bg-[var(--vc-lime)]/5 text-[var(--vc-lime)] text-xs font-mono tracking-wider">
+                        <span className="w-1.5 h-1.5 rounded-full bg-[var(--vc-lime)] animate-pulse" />
                         KHÓA HỌC AI-FIRST ENGINEERING
                     </span>
                 </motion.div>
@@ -144,24 +144,30 @@ export default function VCHero() {
                     style={{ fontFamily: "Space Grotesk, sans-serif" }}
                 >
                     <span className="text-[#E8E8E8]">AI-FIRST</span>{" "}
-                    <span className="text-[#C6FF00] vc-text-glow">ENGINEER</span>
+                    <span className="text-[var(--vc-lime)] vc-text-glow">ENGINEER</span>
                     <br />
                     <span className="text-[#C0C0C0] text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light">
                         ONE PERSON TECH TEAM
                     </span>
                 </motion.h1>
 
-                {/* Subheadline */}
-                <motion.p
+                {/* Subheadline updated to 4 Không */}
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: bootComplete ? 1 : 0, y: bootComplete ? 0 : 20 }}
                     transition={{ duration: 1, delay: 0.8 }}
-                    className="text-base sm:text-lg md:text-xl text-[#888] max-w-3xl mb-8 leading-relaxed"
+                    className="flex flex-col items-center gap-4 mb-8"
                 >
-                    Đừng chỉ học cách dùng AI. Hãy học cách{" "}
-                    <span className="text-[#C6FF00] font-semibold">điều phối một quân đoàn AI</span>{" "}
-                    để xây dựng đế chế phần mềm của riêng bạn.
-                </motion.p>
+                    <p className="text-base sm:text-lg md:text-xl text-[var(--vc-white)] max-w-3xl leading-relaxed font-medium">
+                        Kỷ nguyên Vibe Coding. Xây Micro-SaaS với nguyên tắc 4 KHÔNG:
+                    </p>
+                    <div className="flex flex-wrap justify-center gap-4 text-sm sm:text-base text-[var(--vc-gray)] font-mono">
+                        <span className="flex items-center gap-2"><span className="text-[var(--vc-lime)]">✗</span> Không Cần Cú Pháp</span>
+                        <span className="flex items-center gap-2"><span className="text-[var(--vc-lime)]">✗</span> Không Thuộc Logic</span>
+                        <span className="flex items-center gap-2"><span className="text-[var(--vc-lime)]">✗</span> Không Cài Đặt Môi Trường</span>
+                        <span className="flex items-center gap-2"><span className="text-[var(--vc-lime)]">✗</span> Không Sợ Fix Bug</span>
+                    </div>
+                </motion.div>
 
                 {/* Key phrases */}
                 <motion.div
@@ -182,7 +188,6 @@ export default function VCHero() {
                     )}
                 </motion.div>
 
-                {/* CTA */}
                 <motion.button
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{
@@ -194,14 +199,14 @@ export default function VCHero() {
                         const el = document.querySelector("#pricing");
                         if (el) el.scrollIntoView({ behavior: "smooth" });
                     }}
-                    className="group relative px-8 py-4 rounded-lg overflow-hidden bg-[#C6FF00] text-[#0A0A0A] font-bold text-sm tracking-wider uppercase vc-glow-btn hover:scale-105 transition-transform duration-300"
+                    className="group relative px-8 py-4 rounded-lg overflow-hidden bg-[var(--vc-lime)] text-[#0A0A0A] font-bold text-sm tracking-wider uppercase vc-glow-btn hover:scale-105 transition-transform duration-300"
                     style={{ fontFamily: "Space Grotesk, sans-serif" }}
                 >
                     <span className="relative z-10 flex items-center gap-3">
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
                         </svg>
-                        Gia nhập kỷ nguyên Vibe Coding
+                        Trở thành Architect — Đăng ký ngay
                     </span>
                 </motion.button>
 
@@ -220,7 +225,7 @@ export default function VCHero() {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: bootComplete ? 1 : 0 }}
-                transition={{ delay: 2.2 }}
+                transition={{ delay: 1.6 }}
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
             >
                 <span className="text-[10px] font-mono text-[#555] tracking-widest uppercase">Scroll</span>
@@ -229,7 +234,7 @@ export default function VCHero() {
                     transition={{ duration: 2, repeat: Infinity }}
                     className="w-4 h-7 rounded-full border border-[#333] flex items-start justify-center p-1"
                 >
-                    <div className="w-1 h-1.5 rounded-full bg-[#C6FF00]" />
+                    <div className="w-1 h-1.5 rounded-full bg-[var(--vc-lime)]" />
                 </motion.div>
             </motion.div>
         </section>

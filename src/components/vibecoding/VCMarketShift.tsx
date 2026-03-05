@@ -97,8 +97,8 @@ export default function VCMarketShift() {
                     transition={{ duration: 0.6 }}
                     className="flex items-center gap-3 mb-4"
                 >
-                    <div className="w-8 h-[1px] bg-[#C6FF00]" />
-                    <span className="text-[#C6FF00] text-xs font-mono tracking-widest uppercase">
+                    <div className="w-8 h-[1px] bg-[var(--vc-lime)]" />
+                    <span className="text-[var(--vc-lime)] text-xs font-mono tracking-widest uppercase">
                         Section 02 — Thị trường
                     </span>
                 </motion.div>
@@ -112,7 +112,7 @@ export default function VCMarketShift() {
                     style={{ fontFamily: "Space Grotesk, sans-serif" }}
                 >
                     THỊ TRƯỜNG ĐÃ{" "}
-                    <span className="text-[#C6FF00]">THAY ĐỔI</span>
+                    <span className="text-[var(--vc-lime)]">THAY ĐỔI</span>
                 </motion.h2>
 
                 <motion.p
@@ -122,8 +122,8 @@ export default function VCMarketShift() {
                     className="text-[#888] text-base md:text-lg max-w-2xl mb-16 leading-relaxed"
                 >
                     CRM/ERP riêng từng là xa xỉ phẩm hàng trăm triệu. Nay, chi phí giảm{" "}
-                    <span className="text-[#C6FF00] font-semibold">10 lần</span>. Tốc độ tăng{" "}
-                    <span className="text-[#C6FF00] font-semibold">100 lần</span>.
+                    <span className="text-[var(--vc-lime)] font-semibold">10 lần</span>. Tốc độ tăng{" "}
+                    <span className="text-[var(--vc-lime)] font-semibold">100 lần</span>.
                 </motion.p>
 
                 {/* Comparison Cards */}
@@ -134,14 +134,14 @@ export default function VCMarketShift() {
                             initial={{ opacity: 0, y: 30 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
                             transition={{ duration: 0.6, delay: 0.3 + i * 0.1 }}
-                            className="group relative rounded-xl border border-[#222] bg-[#141414] p-6 hover:border-[#C6FF00]/30 transition-all duration-500 overflow-hidden"
+                            className="group relative rounded-xl border border-[#222] bg-[#141414] p-6 hover:border-[var(--vc-lime)]/30 transition-all duration-500 overflow-hidden"
                         >
                             {/* Glow on hover */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-[#C6FF00]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                            <div className="absolute inset-0 bg-gradient-to-br from-[var(--vc-lime)]/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                             <div className="relative z-10">
                                 <div className="flex items-center gap-3 mb-4">
-                                    <div className="text-[#C6FF00]">{item.icon}</div>
+                                    <div className="text-[var(--vc-lime)]">{item.icon}</div>
                                     <h3 className="text-[#C0C0C0] text-sm font-mono tracking-wider uppercase">
                                         {item.label}
                                     </h3>
@@ -157,14 +157,14 @@ export default function VCMarketShift() {
                                     </div>
 
                                     {/* Arrow */}
-                                    <svg className="w-6 h-6 text-[#C6FF00] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                    <svg className="w-6 h-6 text-[var(--vc-lime)] flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                                     </svg>
 
                                     {/* New value */}
-                                    <div className="flex-1 rounded-lg bg-[#C6FF00]/[0.05] border border-[#C6FF00]/20 p-4 text-center">
-                                        <p className="text-[10px] font-mono text-[#C6FF00]/60 mb-1 uppercase tracking-wider">Bây giờ</p>
-                                        <p className="text-lg md:text-xl font-bold text-[#C6FF00]">
+                                    <div className="flex-1 rounded-lg bg-[var(--vc-lime)]/[0.05] border border-[var(--vc-lime)]/20 p-4 text-center">
+                                        <p className="text-[10px] font-mono text-[var(--vc-lime)]/60 mb-1 uppercase tracking-wider">Bây giờ</p>
+                                        <p className="text-lg md:text-xl font-bold text-[var(--vc-lime)]">
                                             {item.new}
                                         </p>
                                     </div>
@@ -174,29 +174,30 @@ export default function VCMarketShift() {
                     ))}
                 </div>
 
-                {/* Big stat */}
+                {/* Big stats */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ duration: 0.8, delay: 0.8 }}
-                    className="mt-12 rounded-xl border border-[#C6FF00]/10 bg-gradient-to-r from-[#C6FF00]/[0.03] to-transparent p-8 md:p-12 text-center"
+                    className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4"
                 >
-                    <p className="text-[#888] text-sm font-mono mb-4 tracking-wider">
-                        KHẢ NĂNG SẢN XUẤT CỦA 1 AI-FIRST ENGINEER
-                    </p>
-                    <div className="flex items-center justify-center gap-4 mb-4">
-                        <span className="text-5xl md:text-7xl font-bold text-[#C6FF00]" style={{ fontFamily: "Space Grotesk" }}>
-                            <AnimatedCounter end={1} />
-                        </span>
-                        <span className="text-2xl md:text-3xl text-[#555]">=</span>
-                        <span className="text-5xl md:text-7xl font-bold text-[#C0C0C0]" style={{ fontFamily: "Space Grotesk" }}>
-                            <AnimatedCounter end={5} />
-                        </span>
-                    </div>
-                    <p className="text-[#888] text-sm">
-                        <span className="text-[#C6FF00]">1 người dùng AI</span> hoàn thành khối lượng của{" "}
-                        <span className="text-[#C0C0C0]">team 5 người</span> trong 1 tuần
-                    </p>
+                    {[
+                        { value: 100, suffix: "x", label: "Tốc độ thực thi", sub: "so với quy trình truyền thống", color: "var(--vc-lime)" },
+                        { value: 500, suffix: "M₫", prefix: "-", label: "Chi phí tiết kiệm", sub: "build CRM/ERP với AI thay vì outsource", color: "var(--vc-chrome)" },
+                        { value: 5, suffix: " ngày", label: "Ra thị trường", sub: "từ ý tưởng đến prototype chạy được", color: "var(--vc-chrome)" },
+                    ].map((stat, i) => (
+                        <div
+                            key={i}
+                            className="rounded-xl border border-[#222] bg-[#141414] p-6 text-center"
+                            style={{ borderColor: `${stat.color}15` }}
+                        >
+                            <p className="text-[#888] text-[10px] font-mono tracking-wider mb-3 uppercase">{stat.label}</p>
+                            <p className="text-4xl md:text-5xl font-bold mb-2" style={{ fontFamily: "Space Grotesk", color: stat.color }}>
+                                {stat.prefix}<AnimatedCounter end={stat.value} suffix={stat.suffix} />
+                            </p>
+                            <p className="text-[#555] text-[10px] font-mono leading-relaxed">{stat.sub}</p>
+                        </div>
+                    ))}
                 </motion.div>
             </div>
         </section>

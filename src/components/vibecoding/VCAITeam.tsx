@@ -71,8 +71,8 @@ export default function VCAITeam() {
                     transition={{ duration: 0.6 }}
                     className="flex items-center gap-3 mb-4"
                 >
-                    <div className="w-8 h-[1px] bg-[#C6FF00]" />
-                    <span className="text-[#C6FF00] text-xs font-mono tracking-widest uppercase">
+                    <div className="w-8 h-[1px] bg-[var(--vc-lime)]" />
+                    <span className="text-[var(--vc-lime)] text-xs font-mono tracking-widest uppercase">
                         Section 05 — AI Software Team
                     </span>
                 </motion.div>
@@ -85,7 +85,7 @@ export default function VCAITeam() {
                     style={{ fontFamily: "Space Grotesk, sans-serif" }}
                 >
                     DÀN NHẠC{" "}
-                    <span className="text-[#C6FF00]">GIAO HƯỞNG AI</span>
+                    <span className="text-[var(--vc-lime)]">GIAO HƯỞNG AI</span>
                 </motion.h2>
 
                 <motion.p
@@ -101,16 +101,16 @@ export default function VCAITeam() {
                     Bạn không còn cô đơn — bạn đang điều hành một tập đoàn tài năng trong túi áo.
                 </motion.p>
 
-                {/* Circular Workflow Diagram */}
+                {/* Circular Workflow Diagram — Desktop */}
                 <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 1, delay: 0.3 }}
-                    className="relative w-full max-w-md mx-auto aspect-square mb-20"
+                    className="relative w-full max-w-md mx-auto aspect-square mb-20 hidden md:block"
                 >
                     {/* Center */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-[#C6FF00]/10 border border-[#C6FF00]/30 flex items-center justify-center z-10">
-                        <span className="text-[#C6FF00] text-[10px] font-mono font-bold text-center leading-tight">
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full bg-[var(--vc-lime)]/10 border border-[var(--vc-lime)]/30 flex items-center justify-center z-10">
+                        <span className="text-[var(--vc-lime)] text-[10px] font-mono font-bold text-center leading-tight">
                             YOUR<br />BRAIN
                         </span>
                     </div>
@@ -134,10 +134,10 @@ export default function VCAITeam() {
                                 className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-1 group cursor-default"
                                 style={{ left: `${x}%`, top: `${y}%` }}
                             >
-                                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-[#141414] border border-[#333] group-hover:border-[#C6FF00]/40 flex items-center justify-center text-xl transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(198,255,0,0.15)]">
+                                <div className="w-12 h-12 md:w-14 md:h-14 rounded-xl bg-[#141414] border border-[#333] group-hover:border-[var(--vc-lime)]/40 flex items-center justify-center text-xl transition-all duration-300 transform group-hover:scale-110 group-hover:shadow-[0_0_20px_var(--vc-lime)]">
                                     {agent.emoji}
                                 </div>
-                                <span className="text-[9px] md:text-[10px] font-mono text-[#888] group-hover:text-[#C6FF00] transition-colors whitespace-nowrap">
+                                <span className="text-[9px] md:text-[10px] font-mono text-[#888] group-hover:text-[var(--vc-lime)] transition-colors whitespace-nowrap">
                                     {agent.label}
                                 </span>
                             </motion.div>
@@ -151,8 +151,37 @@ export default function VCAITeam() {
                         className="absolute top-1/2 left-1/2 w-[85%] h-[85%] -translate-x-1/2 -translate-y-1/2"
                         style={{ transformOrigin: "center" }}
                     >
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#C6FF00] shadow-[0_0_10px_rgba(198,255,0,0.6)]" />
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[var(--vc-lime)] shadow-[0_0_10px_var(--vc-lime)]" />
                     </motion.div>
+                </motion.div>
+
+                {/* Mobile Agent Grid */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={isInView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.3 }}
+                    className="md:hidden grid grid-cols-2 gap-3 mb-12"
+                >
+                    {/* Center brain node */}
+                    <div className="col-span-2 flex justify-center mb-2">
+                        <div className="w-16 h-16 rounded-full bg-[var(--vc-lime)]/10 border border-[var(--vc-lime)]/30 flex items-center justify-center">
+                            <span className="text-[var(--vc-lime)] text-[10px] font-mono font-bold text-center leading-tight">YOUR<br />BRAIN</span>
+                        </div>
+                    </div>
+                    {agents.map((agent, i) => (
+                        <motion.div
+                            key={agent.id}
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={isInView ? { opacity: 1, y: 0 } : {}}
+                            transition={{ delay: 0.4 + i * 0.08, duration: 0.4 }}
+                            className="flex items-center gap-3 rounded-xl border border-[#222] bg-[#141414] p-3"
+                        >
+                            <div className="w-10 h-10 rounded-lg bg-[#1a1a1a] border border-[#333] flex items-center justify-center text-lg flex-shrink-0">
+                                {agent.emoji}
+                            </div>
+                            <span className="text-[#888] text-xs font-mono">{agent.label}</span>
+                        </motion.div>
+                    ))}
                 </motion.div>
 
                 {/* Highlight quote */}
@@ -162,9 +191,9 @@ export default function VCAITeam() {
                     transition={{ delay: 0.6 }}
                     className="text-center mb-16"
                 >
-                    <p className="text-[#C0C0C0] text-sm md:text-base italic max-w-xl mx-auto border-l-2 border-[#C6FF00]/30 pl-4 text-left">
+                    <p className="text-[#C0C0C0] text-sm md:text-base italic max-w-xl mx-auto border-l-2 border-[var(--vc-lime)]/30 pl-4 text-left">
                         &ldquo;Đây không phải là AI viết code hộ bạn. Đây là bạn đang{" "}
-                        <span className="text-[#C6FF00] font-semibold not-italic">quản lý một công ty công nghệ</span>{" "}
+                        <span className="text-[var(--vc-lime)] font-semibold not-italic">quản lý một công ty công nghệ</span>{" "}
                         trong 1 trình duyệt.&rdquo;
                     </p>
                 </motion.div>

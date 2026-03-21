@@ -55,8 +55,10 @@ export default function BriefInput({ onComplete }: BriefInputProps) {
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ brief }),
             });
-            if (!res.ok) throw new Error("API Error");
             const data = await res.json();
+            if (!res.ok) {
+                throw new Error(data.error || "Lỗi máy chủ rùi!");
+            }
             if (data.questions?.length > 0) {
                 setQuestions(data.questions);
                 setShowWizard(true);
@@ -64,8 +66,11 @@ export default function BriefInput({ onComplete }: BriefInputProps) {
             } else {
                 onComplete({ brief, answers: {}, brandStyle: "", colorPalette: "", logoFile: null });
             }
-        } catch { alert("Lỗi khi tạo câu hỏi. Vui lòng thử lại."); }
-        finally { setIsLoading(false); }
+        } catch (error: any) {
+            alert(`Lỗi khi phân tích: ${error.message || "Vui lòng thử lại."}`);
+        } finally {
+            setIsLoading(false);
+        }
     };
 
     const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {

@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
-import BriefInput from "../../components/playground/BriefInput";
 import DemoSelector from "../../components/playground/DemoSelector";
 import PlaygroundHero from "../../components/playground/PlaygroundHero";
 import GanttTab from "../../components/playground/GanttTab";
@@ -79,25 +78,16 @@ export default function PlaygroundPage() {
     return (
         <main className="min-h-screen bg-[#050505] text-white selection:bg-[#06B6D4] selection:text-white">
             <Navbar />
-            <div className="pt-24 pb-20 px-4 max-w-6xl mx-auto">
+            <div className="pt-24 pb-20 w-full">
                 <AnimatePresence mode="wait">
                     {step === 0 && (
                         <motion.div key="step0" {...stepVariants} transition={{ duration: 0.5 }}>
-                            <PlaygroundHero />
-                            <BriefInput onComplete={handleWizardComplete} />
-                            {isAnalyzing && (
-                                <div className="flex flex-col items-center justify-center py-16">
-                                    <Loader2 className="w-12 h-12 text-blue-500 animate-spin mb-4" />
-                                    <p className="text-lg text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 font-bold">
-                                        Đang phân tích dự án của bạn...
-                                    </p>
-                                </div>
-                            )}
+                            <PlaygroundHero onComplete={handleWizardComplete} isAnalyzing={isAnalyzing} />
                         </motion.div>
                     )}
 
                     {step === 1 && (
-                        <motion.div key="step1" {...stepVariants} transition={{ duration: 0.5 }}>
+                        <motion.div key="step1" {...stepVariants} transition={{ duration: 0.5 }} className="px-4 max-w-6xl mx-auto">
                             <DemoSelector
                                 brief={brief}
                                 brandContext={brandContext}
@@ -109,7 +99,7 @@ export default function PlaygroundPage() {
                     )}
 
                     {step === 2 && (
-                        <motion.div key="step2" {...stepVariants} transition={{ duration: 0.5 }}>
+                        <motion.div key="step2" {...stepVariants} transition={{ duration: 0.5 }} className="px-4 max-w-6xl mx-auto">
                             {/* Step 2 Header */}
                             <div className="text-center mb-8">
                                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-4">
@@ -144,7 +134,7 @@ export default function PlaygroundPage() {
                     )}
 
                     {step === 3 && (
-                        <motion.div key="step3" {...stepVariants} transition={{ duration: 0.5 }}>
+                        <motion.div key="step3" {...stepVariants} transition={{ duration: 0.5 }} className="px-4 max-w-6xl mx-auto">
                             {/* Step 3 Header */}
                             <div className="text-center mb-8">
                                 <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-blue-500/10 border border-blue-500/20 rounded-full text-blue-400 text-sm font-medium mb-4">

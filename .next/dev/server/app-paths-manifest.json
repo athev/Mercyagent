@@ -1,9 +1,4 @@
 {
-  "/api/analyze-brief/route": "app/api/analyze-brief/route.js",
-  "/api/clarify-brief/route": "app/api/clarify-brief/route.js",
   "/api/generate-demo/route": "app/api/generate-demo/route.js",
-  "/old-home/page": "app/old-home/page.js",
-  "/page": "app/page.js",
-  "/playground/page": "app/playground/page.js",
-  "/vibe-learning/page": "app/vibe-learning/page.js"
+  "/playground/page": "app/playground/page.js"
 }

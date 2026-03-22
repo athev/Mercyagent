@@ -155,10 +155,28 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../src/app/api/auth/[...nextauth]/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/auth/[...nextauth]">> = Specific
+  const handler = {} as typeof import("../../../src/app/api/auth/[...nextauth]/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../src/app/api/clarify-brief/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/clarify-brief">> = Specific
   const handler = {} as typeof import("../../../src/app/api/clarify-brief/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../src/app/api/extract-dna/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/extract-dna">> = Specific
+  const handler = {} as typeof import("../../../src/app/api/extract-dna/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

@@ -45,7 +45,7 @@ export default function CassieNavbar() {
                             className="hidden md:flex items-center gap-1.5 text-xs font-medium text-white/30 hover:text-white/60 transition-colors group"
                         >
                             <ArrowLeft className="w-3.5 h-3.5 group-hover:-translate-x-0.5 transition-transform" />
-                            <span>MercyAgent</span>
+                            <span>Vibework.vn</span>
                         </Link>
                     </motion.div>
 

@@ -17,11 +17,11 @@ export default function Footer() {
               <span className="text-white font-bold text-xs" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>M</span>
             </div>
             <span className="text-white font-bold tracking-widest text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-              MERCY<span className="text-gray-500">AGENT</span>
+            <span className="text-white font-bold" style={{ fontFamily: "'Clash Display', sans-serif" }}>Vibework.vn</span>
             </span>
           </div>
           <p className="text-xs text-gray-600 font-mono">
-            © {new Date().getFullYear()} Mercy Protocol. All rights reserved.
+            © {new Date().getFullYear()} Vibework.vn. All rights reserved.
           </p>
         </div>
 

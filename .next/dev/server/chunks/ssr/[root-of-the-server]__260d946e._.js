@@ -168,7 +168,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$context$2f$LanguageCo
 ;
 ;
 const metadata = {
-    title: "Mercy Protocol",
+    title: "Vibework.vn",
     description: "The next generation of AI workforce."
 };
 function RootLayout({ children }) {

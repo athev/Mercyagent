@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "Mercy Protocol",
+  title: "Vibework.vn",
   description: "The next generation of AI workforce.",
 };
 

@@ -1,7 +1,7 @@
 import OnboardingFlow from "../../components/onboarding/OnboardingFlow";
 
 export const metadata = {
-    title: "Kích hoạt CASSIE — MercyAgent",
+    title: "Kích hoạt CASSIE — Vibework.vn",
     description: "Thiết lập CASSIE — trợ lý AI 24/7 cho doanh nghiệp của bạn.",
 };
 

@@ -35,7 +35,7 @@ export default function Navbar() {
             <span className="text-white font-bold text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>M</span>
           </div>
           <span className="text-primary font-bold tracking-widest text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-            MERCY<span className="text-secondary">AGENT</span>
+            <span className="text-white font-bold" style={{ fontFamily: "'Clash Display', sans-serif" }}>Vibework.vn</span>
           </span>
         </Link>
         

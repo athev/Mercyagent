@@ -37,82 +37,22 @@ export default function QuotationTab({ selectedModules, productType = "website" 
         return "Website";
     };
 
-    const handleDownloadPDF = () => {
+    const handleDownloadPDF = async () => {
         try {
+            const element = document.getElementById("quotation-card");
+            if (!element) return;
+            
+            const html2canvas = (await import('html2canvas')).default;
+            const canvas = await html2canvas(element, { scale: 2, useCORS: true });
+            const imgData = canvas.toDataURL("image/png");
+            
             const pdf = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
-            const pageWidth = pdf.internal.pageSize.getWidth();
-
-            // Header
-            pdf.setFontSize(28);
-            pdf.setTextColor(37, 99, 235);
-            pdf.text("VIBEWORK", 20, 30);
-            pdf.setFontSize(10);
-            pdf.setTextColor(120, 120, 120);
-            pdf.text("GIẢI PHÁP SỐ TOÀN DIỆN", 20, 38);
-
-            pdf.setFontSize(16);
-            pdf.setTextColor(30, 30, 30);
-            pdf.text("BÁO GIÁ DỰ ÁN", pageWidth - 20, 25, { align: "right" });
-            pdf.setFontSize(10);
-            pdf.setTextColor(120, 120, 120);
-            pdf.text(`Loại: ${getProductLabel()}`, pageWidth - 20, 33, { align: "right" });
-            pdf.text(`Ngày: ${new Date().toLocaleDateString('vi-VN')}`, pageWidth - 20, 39, { align: "right" });
-
-            // Divider
-            pdf.setDrawColor(220, 220, 220);
-            pdf.line(20, 45, pageWidth - 20, 45);
-
-            // Table header
-            let y = 55;
-            pdf.setFillColor(245, 245, 245);
-            pdf.rect(20, y - 5, pageWidth - 40, 10, "F");
-            pdf.setFontSize(9);
-            pdf.setTextColor(80, 80, 80);
-            pdf.text("STT", 24, y + 1);
-            pdf.text("Hạng mục", 38, y + 1);
-            pdf.text("Mô tả", 100, y + 1);
-            if (!isApp) pdf.text("Chi phí", pageWidth - 24, y + 1, { align: "right" });
-
-            y += 12;
-            const modulesToShow = isApp
-                ? selectedModules.filter(m => selectedFeatures.includes(m.id))
-                : selectedModules;
-
-            modulesToShow.forEach((m, i) => {
-                pdf.setFontSize(9);
-                pdf.setTextColor(80, 80, 80);
-                pdf.text(`${i + 1}`, 24, y);
-                pdf.setTextColor(30, 30, 30);
-                pdf.text(m.title || "", 38, y, { maxWidth: 55 });
-                pdf.setTextColor(100, 100, 100);
-                const desc = (m.description || "").substring(0, 60);
-                pdf.text(desc, 100, y, { maxWidth: 55 });
-                if (!isApp) {
-                    pdf.setTextColor(30, 30, 30);
-                    pdf.text(formatCurrency((m.estimatedHours || 0) * HOURLY_RATE_VND), pageWidth - 24, y, { align: "right" });
-                }
-                y += 12;
-                if (y > 260) { pdf.addPage(); y = 20; }
-            });
-
-            // Total
-            if (!isApp) {
-                y += 5;
-                pdf.setDrawColor(220, 220, 220);
-                pdf.line(pageWidth / 2, y, pageWidth - 20, y);
-                y += 10;
-                pdf.setFontSize(14);
-                pdf.setTextColor(37, 99, 235);
-                pdf.text(`TỔNG: ${formatCurrency(totalCost)}`, pageWidth - 24, y, { align: "right" });
-            }
-
-            // Footer note
-            y += 15;
-            pdf.setFontSize(8);
-            pdf.setTextColor(150, 150, 150);
-            pdf.text("Báo giá có giá trị 15 ngày. Chi phí ± 15%. Vibework.com | Zalo: 0919 376 786", 20, y);
-
-            pdf.save(`Bao-Gia-Vibework-${getProductLabel()}.pdf`);
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+            
+            pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+            pdf.save(`Bao-Gia-Vibework.vn-${getProductLabel()}.pdf`);
         } catch (error) {
             console.error("Lỗi khi tạo PDF:", error);
             alert("Lỗi khi xuất PDF. Vui lòng thử lại.");
@@ -166,11 +106,11 @@ export default function QuotationTab({ selectedModules, productType = "website" 
             ) : (
                 /* Website / Landing Page: Show quotation */
                 <div ref={printRef} className="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 p-4 md:p-8">
-                    <div className="bg-white text-gray-900 mx-auto w-full max-w-[800px] min-h-[800px] p-10 shadow-2xl relative rounded-xl">
+                    <div id="quotation-card" className="bg-white text-gray-900 mx-auto w-full max-w-[800px] min-h-[800px] p-10 shadow-2xl relative rounded-xl">
                         {/* Header */}
                         <div className="flex justify-between items-start border-b-2 border-gray-200 pb-6 mb-6">
                             <div>
-                                <h1 className="text-3xl font-black text-blue-600 tracking-tighter">VIBEWORK</h1>
+                                <h1 className="text-3xl font-black text-blue-600 tracking-tighter">VIBEWORK.VN</h1>
                                 <p className="text-gray-500 mt-1 text-sm font-medium">GIẢI PHÁP SỐ TOÀN DIỆN</p>
                             </div>
                             <div className="text-right text-sm text-gray-500 space-y-1">
@@ -215,8 +155,9 @@ export default function QuotationTab({ selectedModules, productType = "website" 
                             </div>
                         </div>
 
-                        <div className="mt-6 bg-blue-50 rounded-lg p-3 text-xs text-gray-600">
-                            <p>Bao gồm BA & Content Marketing. Giá trị 15 ngày. ± 15%.</p>
+                        <div className="mt-6 bg-blue-50 rounded-lg p-3 text-xs text-gray-600 flex justify-between items-center">
+                            <p>Bao gồm BA & Content Marketing. Giá trị báo giá: 15 ngày. Chi phí dao động: ± 15%.</p>
+                            <p className="font-semibold text-gray-500">Powered by Zcom Global - zcg.vn</p>
                         </div>
                     </div>
                 </div>

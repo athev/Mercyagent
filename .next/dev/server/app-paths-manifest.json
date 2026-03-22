@@ -1,4 +1,4 @@
 {
-  "/api/generate-demo/route": "app/api/generate-demo/route.js",
-  "/playground/page": "app/playground/page.js"
+  "/api/auth/[...nextauth]/route": "app/api/auth/[...nextauth]/route.js",
+  "/page": "app/page.js"
 }

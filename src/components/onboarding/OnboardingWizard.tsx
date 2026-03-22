@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Link as LinkIcon, Sparkles, User, Palette, MapPin, Briefcase, CheckCircle2, Factory } from "lucide-react";
-import { signIn } from "next-auth/react"; // Will be used when session works
+import { ArrowRight, Link as LinkIcon, Sparkles, User, Palette, MapPin, Briefcase, CheckCircle2, Factory, Loader2 } from "lucide-react";
+import { signIn, useSession } from "next-auth/react";
+import { useSearchParams } from "next/navigation";
 
 // Temporary mock DNA type
 type DNAData = {
@@ -18,9 +19,13 @@ type DNAData = {
 };
 
 export default function OnboardingWizard() {
+    const searchParams = useSearchParams();
+    const { data: session } = useSession();
+    
     const [step, setStep] = useState(1);
     const [url, setUrl] = useState("");
     const [isAnalyzing, setIsAnalyzing] = useState(false);
+    const [isSaving, setIsSaving] = useState(false);
     
     // Default empty state
     const [dna, setDna] = useState<DNAData>({
@@ -34,12 +39,21 @@ export default function OnboardingWizard() {
         websiteUrl: ""
     });
 
+    // Check for step in URL (after Google redirection)
+    useEffect(() => {
+        const stepParam = searchParams.get("step");
+        if (stepParam) {
+            setStep(parseInt(stepParam));
+        } else if (session) {
+            // If already logged in, skip step 1
+            setStep(2);
+        }
+    }, [searchParams, session]);
+
     const handleNext = () => setStep(prev => prev + 1);
 
     const handleGoogleLogin = () => {
-        // Mocking login for now to proceed
-        // signIn("google", { callbackUrl: "/onboarding?step=2" });
-        setStep(2);
+        signIn("google", { callbackUrl: "/onboarding?step=2" });
     };
 
     const handleUrlSubmit = async () => {
@@ -68,10 +82,25 @@ export default function OnboardingWizard() {
     };
 
     const handleSubmitDNA = async () => {
-        // Save to DB
-        console.log("Saving DNA to database...", dna);
-        // After save, redirect to playground
-        window.location.href = "/playground";
+        setIsSaving(true);
+        try {
+            const res = await fetch("/api/save-dna", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ dna })
+            });
+
+            if (res.ok) {
+                // After save, redirect to playground
+                window.location.href = "/playground";
+            } else {
+                alert("Có lỗi xảy ra khi lưu DNA. Vui lòng thử lại.");
+            }
+        } catch (error) {
+            console.error("Failed to save DNA", error);
+        } finally {
+            setIsSaving(false);
+        }
     };
 
     return (
@@ -251,9 +280,14 @@ export default function OnboardingWizard() {
                             
                             <button 
                                 onClick={handleSubmitDNA}
-                                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-[0_0_20px_rgba(6,182,212,0.3)]"
+                                disabled={isSaving}
+                                className="w-full bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-6 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:brightness-110 transition shadow-[0_0_20px_rgba(6,182,212,0.3)] disabled:opacity-50"
                             >
-                                Xác nhận DNA & Vào trang chủ <ArrowRight className="w-5 h-5" />
+                                {isSaving ? (
+                                    <>Đang lưu DNA... <Loader2 className="w-5 h-5 animate-spin" /></>
+                                ) : (
+                                    <>Xác nhận DNA & Vào trang chủ <ArrowRight className="w-5 h-5" /></>
+                                )}
                             </button>
                         </div>
                     </motion.div>

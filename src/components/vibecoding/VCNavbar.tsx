@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { signIn, useSession } from "next-auth/react";
+import Link from "next/link";
+import Image from "next/image";
 
 const navLinks = [
     { label: "Tuyên ngôn", href: "#manifesto" },
@@ -13,6 +16,7 @@ const navLinks = [
 ];
 
 export default function VCNavbar() {
+    const { data: session } = useSession();
     const [scrolled, setScrolled] = useState(false);
     const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -68,13 +72,53 @@ export default function VCNavbar() {
                 </div>
 
                 {/* CTA */}
-                <button
-                    onClick={() => handleClick("#pricing")}
-                    className="hidden lg:flex items-center gap-2 px-4 py-2 rounded border border-[var(--vc-lime)]/30 bg-[var(--vc-lime)]/5 hover:bg-[var(--vc-lime)]/15 text-[var(--vc-lime)] text-xs font-bold tracking-wider uppercase transition-all duration-300"
-                >
-                    <span className="w-1.5 h-1.5 rounded-full bg-[var(--vc-lime)] animate-pulse" />
-                    Đăng ký ngay
-                </button>
+                <div className="hidden lg:flex items-center gap-4">
+                    {session ? (
+                        <Link
+                            href="/profile"
+                            className="flex items-center gap-3 group px-1 py-1 pr-4 rounded border border-[var(--vc-lime)]/30 bg-[var(--vc-lime)]/5 hover:bg-[var(--vc-lime)]/15 transition-all"
+                        >
+                            <div className="relative w-8 h-8 rounded border border-[var(--vc-lime)]/40 overflow-hidden bg-[var(--vc-lime)]/10">
+                                {session.user?.image ? (
+                                    <Image 
+                                        src={session.user.image} 
+                                        alt="Profile" 
+                                        fill 
+                                        className="object-cover"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center text-[10px] text-[var(--vc-lime)] font-mono font-bold">
+                                        {session.user?.name?.[0] || 'U'}
+                                    </div>
+                                )}
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-[var(--vc-white)] text-[10px] font-mono font-bold leading-tight uppercase tracking-wider">
+                                    {session.user?.name?.split(' ')[0] || 'User'}
+                                </span>
+                                <span className="text-[var(--vc-lime)] text-[9px] font-mono leading-tight uppercase tracking-widest opacity-70 group-hover:opacity-100 transition-opacity">
+                                    Architect →
+                                </span>
+                            </div>
+                        </Link>
+                    ) : (
+                        <>
+                            <button
+                                onClick={() => signIn("google")}
+                                className="text-xs font-mono text-[#888] hover:text-[var(--vc-lime)] transition-colors duration-300 tracking-wider uppercase"
+                            >
+                                Đăng nhập
+                            </button>
+                            <Link
+                                href="/onboarding"
+                                className="flex items-center gap-2 px-4 py-2 rounded border border-[var(--vc-lime)]/30 bg-[var(--vc-lime)]/5 hover:bg-[var(--vc-lime)]/15 text-[var(--vc-lime)] text-xs font-bold tracking-wider uppercase transition-all duration-300"
+                            >
+                                <span className="w-1.5 h-1.5 rounded-full bg-[var(--vc-lime)] animate-pulse" />
+                                Đăng ký ngay
+                            </Link>
+                        </>
+                    )}
+                </div>
 
                 {/* Mobile menu button */}
                 <button

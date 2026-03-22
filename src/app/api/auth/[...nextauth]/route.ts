@@ -4,7 +4,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "../../../../lib/prisma";
 
 export const authOptions: AuthOptions = {
-  adapter: PrismaAdapter(prisma) as any, // Using the standard adapter typings
+  adapter: PrismaAdapter(prisma) as any,
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID || "",
@@ -14,10 +14,18 @@ export const authOptions: AuthOptions = {
   session: {
     strategy: "jwt",
   },
+  secret: process.env.NEXTAUTH_SECRET,
+  debug: true,
   callbacks: {
     async session({ session, token }) {
       if (session?.user && token.sub) {
-        (session.user as any).id = token.sub; // Inject user id into session
+        (session.user as any).id = token.sub;
+        
+        // CHECK DNA in database
+        const dna = await prisma.userDNA.findUnique({
+          where: { userId: token.sub }
+        });
+        (session.user as any).hasDNA = !!dna;
       }
       return session;
     },
@@ -28,10 +36,6 @@ export const authOptions: AuthOptions = {
       return token;
     },
   },
-  pages: {
-    signIn: "/onboarding", // Redirect to special onboarding instead of generic login page
-  },
-  secret: process.env.NEXTAUTH_SECRET || "fallback_secret_for_local_dev",
 };
 
 const handler = NextAuth(authOptions);

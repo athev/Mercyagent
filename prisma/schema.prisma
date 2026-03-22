@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Account {
@@ -43,6 +44,12 @@ model User {
   accounts      Account[]
   sessions      Session[]
   dna           UserDNA?
+  
+  // Profile Dashboard Relations
+  courses       UserCourseEnrollment[]
+  tools         UserToolSubscription[]
+  agents        UserAgentContract[]
+  tickets       UserTicket[]
 }
 
 model VerificationToken {
@@ -58,18 +65,107 @@ model UserDNA {
   userId      String   @unique
   user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   
-  brandColor1 String?
-  brandColor2 String?
-  logoUrl     String?
-  websiteUrl  String?
-  companyName String?
-  profession  String?
-  jobTitle    String?
-  address     String?
-  phone       String?
+  brandColors  String? // Store as comma-separated hex codes
+  brandColor1  String?
+  brandColor2  String?
+  logoUrl      String?
+  websiteUrl   String?
+  companyName  String?
+  profession   String?
+  jobTitle     String?
+  address      String?
+  phone        String?
+  
+  toneOfVoice     String?
+  extraGuidelines String? @db.Text
+  competitors     String? // JSON string
+  niches          String? // JSON string
+  
+  products     Product[]
   
   rawSocialContext String? // Store raw scraped data
   
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  dnaId       String
+  dna         UserDNA  @relation(fields: [dnaId], references: [id], onDelete: Cascade)
+  
+  title       String
+  description String?  @db.Text
+  imageUrl    String?
+  price       String?
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// --- Profile Dashboard Models ---
+
+// Khóa học đã mua
+model UserCourseEnrollment {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  courseId   String
+  courseName String
+  progress   Int      @default(0) // 0-100
+  status     String   @default("active") // active | completed | paused
+  
+  purchasedAt DateTime @default(now())
+  completedAt DateTime?
+  updatedAt   DateTime @updatedAt
+}
+
+// Tool đã đăng ký
+model UserToolSubscription {
+  id        String   @id @default(cuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  toolId    String
+  toolName  String
+  toolIcon  String?
+  status    String   @default("active") // active | expired | cancelled
+  
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// AI Agent đang thuê
+model UserAgentContract {
+  id         String   @id @default(cuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  agentId    String
+  agentName  String
+  agentAvatar String?
+  taskType   String
+  status     String   @default("running") // running | paused | ended
+  
+  expiresAt  DateTime
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+// Ticket / Dự án từ Playground
+model UserTicket {
+  id           String   @id @default(cuid())
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  title        String
+  description  String?  @db.Text
+  demoUrl      String?
+  quoteAmount  String?  // Store as string (e.g., "2.5M") for now or Float
+  status       String   @default("consulting") // consulting | quoted | in_progress | completed | cancelled
+  
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 }

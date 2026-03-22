@@ -11,7 +11,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const { dna } = await req.json();
+    const { dna, products } = await req.json();
     const userId = (session.user as any).id;
 
     if (!userId) {
@@ -22,27 +22,52 @@ export async function POST(req: Request) {
     const savedDna = await prisma.userDNA.upsert({
       where: { userId },
       update: {
-        brandColor1: dna.brandColor1,
-        brandColor2: dna.brandColor2,
+        brandColors: dna.brandColors?.join(","),
+        brandColor1: dna.brandColors?.[0],
+        brandColor2: dna.brandColors?.[1],
         websiteUrl: dna.websiteUrl,
         companyName: dna.companyName,
         profession: dna.profession,
         jobTitle: dna.jobTitle,
         address: dna.address,
         phone: dna.phone,
+        toneOfVoice: dna.toneOfVoice,
+        extraGuidelines: dna.extraGuidelines,
+        competitors: JSON.stringify(dna.competitors),
+        niches: JSON.stringify(dna.niches),
       },
       create: {
         userId,
-        brandColor1: dna.brandColor1,
-        brandColor2: dna.brandColor2,
+        brandColors: dna.brandColors?.join(","),
+        brandColor1: dna.brandColors?.[0],
+        brandColor2: dna.brandColors?.[1],
         websiteUrl: dna.websiteUrl,
         companyName: dna.companyName,
         profession: dna.profession,
         jobTitle: dna.jobTitle,
         address: dna.address,
         phone: dna.phone,
+        toneOfVoice: dna.toneOfVoice,
+        extraGuidelines: dna.extraGuidelines,
+        competitors: JSON.stringify(dna.competitors),
+        niches: JSON.stringify(dna.niches),
       },
     });
+
+    // Handle Products if provided
+    if (products && Array.isArray(products)) {
+        // Clear old products and create new ones for simplicity
+        await prisma.product.deleteMany({ where: { dnaId: savedDna.id } });
+        await prisma.product.createMany({
+            data: products.map((p: any) => ({
+                dnaId: savedDna.id,
+                title: p.title || "Untitled Product",
+                description: p.description,
+                price: p.price,
+                imageUrl: p.imageUrl,
+            }))
+        });
+    }
 
     return NextResponse.json({ success: true, dna: savedDna });
   } catch (error: any) {

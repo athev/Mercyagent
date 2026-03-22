@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "../components/Providers";
 import { ThemeProvider } from "../context/ThemeContext";
 import { LanguageProvider } from "../context/LanguageContext";
+import AuthGuard from "../components/auth/AuthGuard";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,11 +32,13 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body className="antialiased">
         <Providers>
-          <ThemeProvider>
-            <LanguageProvider>
-              {children}
-            </LanguageProvider>
-          </ThemeProvider>
+          <AuthGuard>
+            <ThemeProvider>
+              <LanguageProvider>
+                {children}
+              </LanguageProvider>
+            </ThemeProvider>
+          </AuthGuard>
         </Providers>
       </body>
     </html>

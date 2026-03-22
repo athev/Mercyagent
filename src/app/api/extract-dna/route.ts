@@ -1,67 +1,72 @@
 import { NextResponse } from "next/server";
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY });
+const ai = new GoogleGenAI({ apiKey: process.env.NEXT_PUBLIC_GEMINI_API_KEY || "" });
 
 export async function POST(req: Request) {
     try {
-        const { url } = await req.json();
+        const { url, text } = await req.json();
 
-        if (!url) {
-            return NextResponse.json({ error: "Thiếu đường dẫn URL" }, { status: 400 });
+        if (!url && !text) {
+            return NextResponse.json({ error: "Thiếu dữ liệu đầu vào (URL hoặc Text)" }, { status: 400 });
         }
 
-        // Fetch the website content
-        // In a real production app, you might want to use a headless browser service or 
-        // a more robust scraping library (like Cheerio) to handle SPA websites.
-        // For simplicity, we just fetch the raw HTML.
-        let htmlContent = "";
-        try {
-            const fetchRes = await fetch(url, { headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" } });
-            if (fetchRes.ok) {
-                const text = await fetchRes.text();
-                // Extremely basic tag stripping to save tokens
-                htmlContent = text.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
-                                  .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, "")
-                                  .replace(/<[^>]+>/g, " ")
-                                  .substring(0, 15000); // Limit to 15k chars roughly
-            } else {
-                htmlContent = `Không truy cập được nội dung từ URL này. HTTP Status: ${fetchRes.status}`;
+        let brandContext = "";
+        
+        if (url) {
+            try {
+                const fetchRes = await fetch(url.startsWith("http") ? url : `https://${url}`, { 
+                    headers: { "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)" },
+                });
+                if (fetchRes.ok) {
+                    const rawText = await fetchRes.text();
+                    brandContext = rawText
+                        .replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, "")
+                        .replace(/<style\b[^<]*(?:(?!<\/style>)<[^<]*)*<\/style>/gi, "")
+                        .replace(/<[^>]+>/g, " ")
+                        .substring(0, 15000);
+                } else {
+                    brandContext = `Không thể truy quét nội dung từ URL: ${url}`;
+                }
+            } catch (e: any) {
+                brandContext = `Lỗi truy cập URL: ${e.message}`;
             }
-        } catch (e: any) {
-            console.error("Fetch URL Error:", e);
-            htmlContent = "Lỗi mạng hoặc bị block bởi CORS/Cloudflare.";
+        } else {
+            brandContext = text;
         }
 
-        const prompt = `Bạn là một AI phân tích thương hiệu (Brand DNA Analyzer) chuyên nghiệp.
-Nhiệm vụ của bạn là đọc nội dung (hoặc suy luận từ manh mối) của đường link sau: ${url}
-Nội dung HTML thô trang web: 
+        const prompt = `Bạn là một chuyên gia phân tích thương hiệu cao cấp (Chief Brand Officer AI).
+Nhiệm vụ của bạn là giải mã "DNA linh hồn" của thương hiệu dựa trên dữ liệu sau:
+Dữ liệu đầu vào:
 """
-${htmlContent}
+${brandContext}
 """
 
-Dựa vào nội dung trên (hoặc suy đoán dựa trên domain/tên miền), hãy trích xuất các thông tin sau để trả về ĐÚNG VÀ CHỈ MỘT cục dữ liệu JSON theo cấu trúc (Tuyệt đối không có markdown \`\`\`json hay text thừa):
+Hãy trích xuất và suy luận bộ thông tin DNA đầy đủ. Kết quả trả về PHẢI là một JSON object chuẩn, không có markdown hay giải thích thêm.
+Cấu trúc JSON yêu cầu:
 {
-    "companyName": "Tên doanh nghiệp hoặc cá nhân",
-    "profession": "Lĩnh vực kinh doanh hoặc nghệ nghiệp (ngắn gọn)",
-    "jobTitle": "Chức vụ (nếu cá nhân) hoặc Dịch vụ chính",
-    "brandColor1": "Mã màu Hex code chủ đạo 1 (#xxxxxx) (Dự đoán nếu không thấy)",
-    "brandColor2": "Mã màu Hex code phụ 2 (#xxxxxx) (Dự đoán nếu không đồng bộ)",
-    "address": "Địa chỉ hoặc Quốc gia/Khu vực hoạt động",
-    "phone": "Số điện thoại liên hệ tìm được (hoặc để rỗng)",
-    "websiteUrl": "${url}"
+    "companyName": "Tên thương hiệu",
+    "profession": "Lĩnh vực/Ngành nghề chính",
+    "brandColors": ["#hex1", "#hex2", "#hex3"], 
+    "logoUrl": "", 
+    "toneOfVoice": "Mô tả ngắn về giọng văn (VD: Sang trọng, tối giản, năng động...)",
+    "competitors": ["Đối thủ 1", "Đối thủ 2"], 
+    "niches": ["Ngách 1", "Ngách 2"], 
+    "extraGuidelines": "Mô tả phong cách thiết kế phù hợp (VD: Bauhaus, Cinematic, Tech-minimalist...)",
+    "address": "Địa chỉ hoặc khu vực",
+    "phone": "SĐT liên hệ"
 }
-Hãy linh hoạt suy đoán mã màu mượt mà (VD: #3b82f6) phù hợp với lĩnh vực nếu không tìm thấy chính xác trong source code. Luôn trả về form chuẩn xác.`;
 
+Lưu ý: Nếu dữ liệu đầu vào thiếu, hãy dựa vào tên thương hiệu hoặc lĩnh vực để SUY LUẬN một bộ DNA mượt mà nhất.`;
+
+        // Use the pattern found in generate-demo route
         const response = await ai.models.generateContent({
-            model: "gemini-2.5-flash",
-            contents: prompt,
-            config: {
-                temperature: 0.2,
-            }
+            model: "gemini-2.0-flash", // Using 2.0 as requested/inferred
+            contents: [{ role: "user", parts: [{ text: prompt }] }]
         });
-
-        const textResponse = response.text || "";
+        
+        const candidate = response.candidates?.[0];
+        const textResponse = (candidate?.content?.parts?.[0] as any)?.text || "{}";
         
         // Clean JSON formatting from Gemini (it often returns ```json ... ```)
         let jsonStr = textResponse.trim();
@@ -76,18 +81,17 @@ Hãy linh hoạt suy đoán mã màu mượt mà (VD: #3b82f6) phù hợp với 
         return NextResponse.json({ dna: parsedData });
     } catch (error: any) {
         console.error("Lỗi khi phân tích DNA:", error);
-        
-        // Return fallback DNA so the UI doesn't crash on error
         return NextResponse.json({ 
             dna: {
-                companyName: "Dự án Hiện đại (Fallback)",
-                profession: "Tương tác số",
-                jobTitle: "Nhà phát triển",
-                brandColor1: "#000000",
-                brandColor2: "#ffffff",
-                address: "Không có thông tin",
-                phone: "",
-                websiteUrl: ""
+                companyName: "Dự án mới",
+                profession: "Digital Space",
+                brandColors: ["#000000", "#3b82f6", "#ffffff"],
+                toneOfVoice: "Hiện đại",
+                competitors: [],
+                niches: [],
+                extraGuidelines: "Clean & Modern",
+                address: "",
+                phone: ""
             } 
         });
     }

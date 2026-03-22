@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 // Tái sử dụng data từ VibeService cũ
 const SAMPLE_PLAN = {
@@ -148,12 +149,14 @@ function VibeServiceModal({ isOpen, onClose, userPrompt }: { isOpen: boolean; on
             </div>
             
             <div className="pt-2">
-              <button
-                disabled={selectedSupplier === null}
-                className="py-4 w-full rounded-full bg-white text-black font-bold text-sm disabled:opacity-30 disabled:cursor-not-allowed hover:bg-gray-100 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+              <Link
+                href="/onboarding"
+                className={`py-4 w-full flex items-center justify-center rounded-full bg-white text-black font-bold text-sm ${
+                  selectedSupplier === null ? "opacity-30 cursor-not-allowed pointer-events-none" : "hover:bg-gray-100 shadow-[0_0_20px_rgba(255,255,255,0.15)]"
+                } transition-all`}
               >
                 {selectedSupplier !== null ? `Bắt đầu dự án cùng ${SAMPLE_PLAN.suppliers[selectedSupplier].name} →` : "Chọn 1 nhà cung cấp để bắt đầu"}
-              </button>
+              </Link>
             </div>
           </div>
         )}

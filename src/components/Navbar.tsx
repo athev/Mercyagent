@@ -6,8 +6,11 @@ import { useLanguage } from '../context/LanguageContext';
 import { useTheme } from '../context/ThemeContext';
 import { Sun, Moon, Globe } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
+import { signIn, useSession } from 'next-auth/react';
 
 export default function Navbar() {
+  const { data: session } = useSession();
   const [scrolled, setScrolled] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
@@ -63,9 +66,42 @@ export default function Navbar() {
             {theme === 'dark' ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
           </button>
 
-          <button className="hidden md:block px-5 py-2 text-xs font-bold tracking-wider text-primary border border-primary rounded-sm hover:bg-white/5 transition-colors">
-            LOGIN
-          </button>
+          {session ? (
+            <Link 
+              href="/profile" 
+              className="flex items-center gap-3 group px-1 py-1 pr-4 rounded-full bg-white/5 border border-primary/20 hover:bg-white/10 transition-all ml-2"
+            >
+              <div className="relative w-8 h-8 rounded-full overflow-hidden border border-primary/30 bg-primary/10">
+                {session.user?.image ? (
+                  <Image 
+                    src={session.user.image} 
+                    alt="Profile" 
+                    fill 
+                    className="object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center text-[10px] text-primary font-bold">
+                    {session.user?.name?.[0] || 'U'}
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-col">
+                <span className="text-white text-xs font-bold leading-tight">
+                  {session.user?.name?.split(' ')[0] || 'User'}
+                </span>
+                <span className="text-primary text-[10px] leading-tight font-medium opacity-70 group-hover:opacity-100 transition-opacity">
+                  Playground →
+                </span>
+              </div>
+            </Link>
+          ) : (
+            <button 
+              onClick={() => signIn("google")}
+              className="hidden md:block px-5 py-2 text-xs font-bold tracking-wider text-primary border border-primary rounded-sm hover:bg-white/5 transition-colors"
+            >
+              LOGIN
+            </button>
+          )}
         </div>
       </div>
     </motion.nav>

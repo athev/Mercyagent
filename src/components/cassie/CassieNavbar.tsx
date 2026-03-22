@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { MessageCircle, ArrowLeft, Zap } from "lucide-react";
+import { signIn, useSession } from "next-auth/react";
+import Image from "next/image";
 
 const navLinks = [
     { label: "Tính năng", href: "#features" },
@@ -13,6 +15,7 @@ const navLinks = [
 ];
 
 export default function CassieNavbar() {
+    const { data: session } = useSession();
     const [scrolled, setScrolled] = useState(false);
     const [activeLink, setActiveLink] = useState("");
 
@@ -122,22 +125,52 @@ export default function CassieNavbar() {
                     </div>
 
                     {/* CTA Button */}
-                    <motion.a
-                        href="/onboarding"
-                        whileHover={{ scale: 1.03 }}
-                        whileTap={{ scale: 0.97 }}
-                        className="relative group flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white overflow-hidden"
-                    >
-                        {/* Button background and glow */}
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 transition-all duration-300 group-hover:from-blue-500 group-hover:to-cyan-500" />
-                        {/* Shimmer effect */}
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
-                        {/* Glow shadow */}
-                        <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_25px_rgba(59,130,246,0.5)] blur-sm" />
+                    {session ? (
+                        <Link
+                            href="/profile"
+                            className="flex items-center gap-3 group px-1 py-1 pr-4 rounded-full bg-white/5 border border-blue-500/30 hover:bg-white/10 transition-all shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                        >
+                            <div className="relative w-9 h-9 rounded-full overflow-hidden border border-blue-400/30 bg-blue-500/10">
+                                {session.user?.image ? (
+                                    <Image 
+                                        src={session.user.image} 
+                                        alt="Profile" 
+                                        fill 
+                                        className="object-cover"
+                                    />
+                                ) : (
+                                    <div className="w-full h-full flex items-center justify-center text-[11px] text-blue-400 font-bold">
+                                        {session.user?.name?.[0] || 'U'}
+                                    </div>
+                                )}
+                            </div>
+                            <div className="flex flex-col">
+                                <span className="text-white text-[11px] font-bold leading-tight tracking-wider uppercase">
+                                    {session.user?.name?.split(' ')[0] || 'User'}
+                                </span>
+                                <span className="text-blue-400 text-[10px] leading-tight font-medium opacity-80 group-hover:opacity-100 transition-opacity uppercase tracking-widest">
+                                    Vibe Hub →
+                                </span>
+                            </div>
+                        </Link>
+                    ) : (
+                        <motion.button
+                            onClick={() => signIn("google")}
+                            whileHover={{ scale: 1.03 }}
+                            whileTap={{ scale: 0.97 }}
+                            className="relative group flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold text-white overflow-hidden"
+                        >
+                            {/* Button background and glow */}
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-cyan-600 transition-all duration-300 group-hover:from-blue-500 group-hover:to-cyan-500" />
+                            {/* Shimmer effect */}
+                            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-in-out" />
+                            {/* Glow shadow */}
+                            <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_25px_rgba(59,130,246,0.5)] blur-sm" />
 
-                        <Zap className="relative w-3.5 h-3.5 text-yellow-300 z-10" />
-                        <span className="relative z-10">⚡ Kích hoạt CASSIE</span>
-                    </motion.a>
+                            <Zap className="relative w-3.5 h-3.5 text-yellow-300 z-10" />
+                            <span className="relative z-10">⚡ Kích hoạt CASSIE</span>
+                        </motion.button>
+                    )}
                 </div>
             </div>
 

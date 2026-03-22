@@ -31,11 +31,9 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-sm bg-gradient-to-br from-[#06B6D4] to-[#F97316] flex items-center justify-center">
-            <span className="text-white font-bold text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>M</span>
-          </div>
-          <span className="text-primary font-bold tracking-widest text-lg" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-            <span className="text-white font-bold" style={{ fontFamily: "'Clash Display', sans-serif" }}>Vibework.vn</span>
+          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#7C3AED] to-[#0D9488] shadow-[0_0_15px_rgba(124,58,237,0.3)] group-hover:shadow-[0_0_20px_rgba(124,58,237,0.5)] transition-shadow" />
+          <span className="text-white font-bold text-xl tracking-tight" style={{ fontFamily: "'Clash Display', sans-serif" }}>
+            Vibework
           </span>
         </Link>
         

@@ -13,11 +13,9 @@ export default function Footer() {
         {/* Logo & Copyright */}
         <div className="flex flex-col items-center md:items-start gap-2">
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-sm bg-gradient-to-br from-[#06B6D4] to-[#F97316] flex items-center justify-center">
-              <span className="text-white font-bold text-xs" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>M</span>
-            </div>
-            <span className="text-white font-bold tracking-widest text-sm" style={{ fontFamily: 'Space Grotesk, sans-serif' }}>
-            <span className="text-white font-bold" style={{ fontFamily: "'Clash Display', sans-serif" }}>Vibework.vn</span>
+            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-[#7C3AED] to-[#0D9488] shadow-[0_0_10px_rgba(124,58,237,0.3)]" />
+            <span className="text-white font-bold text-lg tracking-tight" style={{ fontFamily: "'Clash Display', sans-serif" }}>
+              Vibework
             </span>
           </div>
           <p className="text-xs text-gray-600 font-mono">

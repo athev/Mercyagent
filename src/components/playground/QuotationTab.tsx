@@ -106,7 +106,7 @@ export default function QuotationTab({ selectedModules, productType = "website" 
             ) : (
                 /* Website / Landing Page: Show quotation */
                 <div ref={printRef} className="overflow-x-auto rounded-2xl border border-white/10 bg-white/5 p-4 md:p-8">
-                    <div id="quotation-card" className="bg-white text-gray-900 mx-auto w-full max-w-[800px] min-h-[800px] p-10 shadow-2xl relative rounded-xl">
+                    <div id="quotation-card" className="bg-white text-gray-900 mx-auto w-full min-w-[760px] max-w-[800px] min-h-[800px] p-6 sm:p-10 shadow-2xl relative rounded-xl">
                         {/* Header */}
                         <div className="flex justify-between items-start border-b-2 border-gray-200 pb-6 mb-6">
                             <div>

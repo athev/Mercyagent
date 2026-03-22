@@ -131,7 +131,7 @@ export default function PlaygroundHero({ onComplete, isAnalyzing = false }: Play
                     <motion.h1 
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
-                        className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-white text-center tracking-tight leading-[0.95] mb-4"
+                        className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-white text-center tracking-tight leading-[1] md:leading-[0.95] mb-4"
                         style={{ fontFamily: "'Clash Display', sans-serif" }}
                     >
                         Vibework Brief <br />
@@ -143,7 +143,7 @@ export default function PlaygroundHero({ onComplete, isAnalyzing = false }: Play
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-[#888] text-lg md:text-xl text-center mb-12 max-w-2xl font-medium"
+                        className="text-[#888] text-base sm:text-lg md:text-xl text-center mb-10 md:mb-12 max-w-2xl font-medium px-4 md:px-0"
                     >
                         Mô tả ý tưởng của bạn, để AI của chúng tôi phân tích các nhu cầu thực tế và thiết kế lộ trình triển khai chi tiết.
                     </motion.p>

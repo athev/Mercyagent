@@ -48,8 +48,8 @@ export default function GanttTab({ selectedModules }: GanttTabProps) {
                 {/* Fixed Left Column for Task Names, Scrollable Right Column for Timeline */}
                 <div className="flex min-w-max pb-4">
                     {/* Tasks List */}
-                    <div className="w-[300px] flex-shrink-0 sticky left-0 z-20 bg-[#0f111a] border-r border-white/10 pr-4">
-                        <div className="h-12 flex items-end pb-2 font-bold text-gray-500 text-sm border-b border-white/10 mb-4">
+                    <div className="w-[180px] sm:w-[240px] md:w-[300px] flex-shrink-0 sticky left-0 z-20 bg-[#0f111a] border-r border-white/10 pr-4">
+                        <div className="h-12 flex items-end pb-2 font-bold text-gray-500 text-xs md:text-sm border-b border-white/10 mb-4">
                             HẠNG MỤC CÔNG VIỆC
                         </div>
                         <div className="space-y-4">

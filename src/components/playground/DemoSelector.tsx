@@ -216,7 +216,7 @@ export default function DemoSelector({ brief, brandContext, modules, onSelect, o
 
             {/* Action Buttons */}
             {currentDemo && !isLoading && (
-                <div className="flex items-center justify-center gap-6 mt-4">
+                <div className="flex items-center justify-center gap-6 mt-4 pb-8 md:pb-0">
                     <button onClick={() => handleSwipe("left")}
                         className="w-16 h-16 rounded-full bg-red-500/10 border-2 border-red-500/30 flex items-center justify-center text-red-400 hover:bg-red-500/20 hover:scale-110 transition-all">
                         <X className="w-7 h-7" />

@@ -39,7 +39,12 @@ Chỉ JSON, không markdown, 100% tiếng Việt, ngắn gọn thân thiện.
         });
         
         const text = result.text || "";
-        const jsonString = text.replace(/```json|```/g, "").trim();
+        const startIndex = text.indexOf('[');
+        const endIndex = text.lastIndexOf(']');
+        if (startIndex === -1 || endIndex === -1) {
+            throw new Error("Không thể trích xuất cấu trúc câu hỏi từ AI.");
+        }
+        const jsonString = text.substring(startIndex, endIndex + 1);
         const questions = JSON.parse(jsonString);
 
         return NextResponse.json({ questions });

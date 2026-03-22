@@ -59,7 +59,12 @@ CHÚ Ý: Chỉ JSON hợp lệ, không markdown. Tiếng Việt 100%.
         });
 
         const text = result.text || "";
-        const jsonString = text.replace(/```json|```/g, "").trim();
+        const startIndex = text.indexOf('{');
+        const endIndex = text.lastIndexOf('}');
+        if (startIndex === -1 || endIndex === -1) {
+            throw new Error("Không thể trích xuất dữ liệu kế hoạch từ AI.");
+        }
+        const jsonString = text.substring(startIndex, endIndex + 1);
         const parsed = JSON.parse(jsonString);
 
         return NextResponse.json({

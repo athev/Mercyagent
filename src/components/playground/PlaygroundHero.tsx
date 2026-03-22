@@ -60,7 +60,8 @@ export default function PlaygroundHero({ onComplete, isAnalyzing = false }: Play
             });
             const data = await res.json();
             if (!res.ok) {
-                throw new Error(data.error || "Lỗi máy chủ rùi!");
+                const errMessage = data.details ? `${data.error} (${data.details})` : data.error;
+                throw new Error(errMessage || "Lỗi máy chủ rùi!");
             }
             if (data.questions?.length > 0) {
                 setQuestions(data.questions);

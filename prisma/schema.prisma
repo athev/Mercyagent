@@ -169,3 +169,43 @@ model UserTicket {
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
 }
+
+// --- Marketplace Models ---
+
+// Yêu cầu công việc (Job Ticket)
+model JobTicket {
+  id              String   @id @default(cuid())
+  title           String
+  description     String   @db.Text
+  analysisData    Json?    // Chứa workflow do Gemini sinh ra
+  budget          String?  // Gợi ý ngân sách
+  status          String   @default("OPEN") // OPEN, IN_PROGRESS, COMPLETED
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  
+  // Quan hệ
+  postedById      String?  // Người dùng đăng
+  takenById       String?  // Trainer nhận việc
+}
+
+// Bảng Profile riêng cho AI Trainer / Freelancer
+model TrainerProfile {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  specialties     String[] // ["Marketing", "Code react", "Midjourney AI"]
+  rating          Float    @default(0)
+  jobsCompleted   Int      @default(0)
+  rankingTier     String   @default("Novice") // Novice, Pro, Elite
+}
+
+// Lịch sử Đấu thầu / Xin nhận việc (Tùy chọn cho nâng cao)
+model JobProposal {
+  id              String   @id @default(cuid())
+  jobId           String
+  trainerId       String
+  proposedPrice   String?
+  proposedTime    String?
+  status          String   @default("PENDING") // PENDING, ACCEPTED, REJECTED
+  createdAt       DateTime @default(now())
+}
+

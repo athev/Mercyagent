@@ -3,10 +3,11 @@ import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
-export async function GET(req: Request, { params }: { params: { id: string } }) {
+export async function GET(req: Request, context: { params: Promise<{ id: string }> }) {
   try {
+    const resolvedParams = await context.params;
     const job = await prisma.jobTicket.findUnique({
-      where: { id: params.id },
+      where: { id: resolvedParams.id },
     });
 
     if (!job) {
@@ -20,12 +21,13 @@ export async function GET(req: Request, { params }: { params: { id: string } }) 
   }
 }
 
-export async function PATCH(req: Request, { params }: { params: { id: string } }) {
+export async function PATCH(req: Request, context: { params: Promise<{ id: string }> }) {
   try {
+    const resolvedParams = await context.params;
     const { status, trainerId } = await req.json();
 
     const job = await prisma.jobTicket.update({
-      where: { id: params.id },
+      where: { id: resolvedParams.id },
       data: {
         status: status || "IN_PROGRESS",
       },

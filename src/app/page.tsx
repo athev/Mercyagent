@@ -2,39 +2,39 @@
 
 import HPNavbar from "../components/homepage/HPNavbar";
 import HPPlaygroundHero from "../components/homepage/HPPlaygroundHero";
-import HPShowcase from "../components/homepage/HPShowcase";
-import HPLayerAgents from "../components/homepage/HPLayerAgents";
-import HPLayerTools from "../components/homepage/HPLayerTools";
-import HPLayerLearning from "../components/homepage/HPLayerLearning";
-import HPTestimonials from "../components/homepage/HPTestimonials";
-import HPFinalCTA from "../components/homepage/HPFinalCTA";
-import HPFooter from "../components/homepage/HPFooter";
+import HPServices from "../components/homepage/HPServices";
+import HPWhyVibework from "../components/homepage/HPWhyVibework";
+import HPPersonas from "../components/homepage/HPPersonas";
+import HPHowItWorksNew from "../components/homepage/HPHowItWorksNew";
+import HPFaqNew from "../components/homepage/HPFaqNew";
+import HPFinalCtaNew from "../components/homepage/HPFinalCtaNew";
+import HPFooterNew from "../components/homepage/HPFooterNew";
 
 export default function Home() {
   return (
-    <main className="bg-black text-white overflow-x-hidden" style={{ fontFamily: "'Satoshi', sans-serif" }}>
+    <main className="bg-white text-gray-900 overflow-x-hidden" style={{ fontFamily: "'Inter', sans-serif" }}>
       <style jsx global>{`
-        @import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         body {
-          background-color: #000;
-          color: #fff;
-          font-family: 'Satoshi', sans-serif;
+          background-color: #ffffff;
+          color: #111827;
+          font-family: 'Inter', sans-serif;
           -webkit-font-smoothing: antialiased;
         }
         html { scroll-behavior: smooth; }
         * { box-sizing: border-box; }
-        ::selection { background: rgba(124,58,237,0.3); color: #fff; }
+        ::selection { background: rgba(59,130,246,0.2); color: #1e3a5f; }
       `}</style>
 
       <HPNavbar />
       <HPPlaygroundHero />
-      <HPShowcase />
-      <HPLayerAgents />
-      <HPLayerTools />
-      <HPLayerLearning />
-      <HPTestimonials />
-      <HPFinalCTA />
-      <HPFooter />
+      <HPServices />
+      <HPWhyVibework />
+      <HPPersonas />
+      <HPHowItWorksNew />
+      <HPFaqNew />
+      <HPFinalCtaNew />
+      <HPFooterNew />
     </main>
   );
 }

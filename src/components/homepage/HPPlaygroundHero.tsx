@@ -624,55 +624,76 @@ export default function HPPlaygroundHero() {
   return (
     <>
       <style>{`
-        .dotted-bg {
-          background-image: radial-gradient(rgba(255,255,255,0.15) 1px, transparent 1px);
-          background-size: 24px 24px;
+        .vw-hero-bg {
+          background: radial-gradient(ellipse 90% 70% at 50% -5%, #DBEAFE 0%, #EFF6FF 45%, #F8FAFC 100%);
         }
-        .glow-orb-1 { background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 60%); }
-        .glow-orb-2 { background: radial-gradient(circle, rgba(13,148,136,0.15) 0%, transparent 60%); }
-        .glass-box {
-          background: rgba(255,255,255,0.03);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-          border: 1px solid rgba(255,255,255,0.1);
-          box-shadow: 0 30px 60px -10px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+        .vw-chat-box {
+          background: #ffffff;
+          border: 1.5px solid #E2E8F0;
+          box-shadow: 0 8px 40px rgba(0,0,0,0.07), 0 2px 8px rgba(0,0,0,0.04);
+          border-radius: 20px;
+          transition: all 0.3s;
         }
-        .glass-box:focus-within {
-          background: rgba(255,255,255,0.05);
-          border-color: rgba(255,255,255,0.2);
-          box-shadow: 0 30px 60px -10px rgba(0,0,0,0.8), 0 0 40px rgba(124,58,237,0.15), inset 0 1px 0 rgba(255,255,255,0.15);
+        .vw-chat-box:focus-within {
+          border-color: #94A3B8;
+          box-shadow: 0 12px 48px rgba(0,0,0,0.1), 0 0 0 4px rgba(59,130,246,0.07);
+        }
+        .vw-tag-pill {
+          background: #F1F5F9;
+          border: 1px solid #E2E8F0;
+          color: #64748B;
+          font-size: 11px;
+          font-weight: 600;
+          padding: 4px 12px;
+          border-radius: 100px;
+          cursor: pointer;
+          transition: all 0.2s;
+        }
+        .vw-tag-pill:hover, .vw-tag-pill.vw-active {
+          background: #0F172A;
+          color: white;
+          border-color: #0F172A;
         }
       `}</style>
 
-      <section className="relative w-full min-h-[90vh] bg-black flex flex-col items-center justify-center overflow-hidden pt-14">
-        <div className="absolute inset-0 dotted-bg opacity-30 pointer-events-none" />
-        <div className="absolute top-1/4 -left-1/4 w-[80vw] h-[80vw] glow-orb-1 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 -right-1/4 w-[60vw] h-[60vw] glow-orb-2 rounded-full blur-3xl pointer-events-none" />
+      <section className="relative w-full min-h-screen vw-hero-bg flex flex-col items-center justify-center overflow-hidden pt-14">
+        {/* Subtle grid pattern */}
+        <div className="absolute inset-0 pointer-events-none" style={{
+          backgroundImage: "linear-gradient(#E2E8F0 1px, transparent 1px), linear-gradient(90deg, #E2E8F0 1px, transparent 1px)",
+          backgroundSize: "48px 48px",
+          opacity: 0.35
+        }} />
 
         <div className="relative z-10 max-w-4xl w-full px-6 flex flex-col items-center">
-          <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-bold text-white text-center tracking-tight leading-[0.95] mb-4" style={{ fontFamily: "'Clash Display', sans-serif" }}>
-            Làm việc với<br />
-            <span className="text-transparent bg-clip-text text-white">tốc độ của AI</span>
+          {/* Badge */}
+          <div className="mb-8 flex items-center gap-2 px-4 py-1.5 rounded-full border border-blue-200 bg-blue-50 text-blue-600 text-xs font-semibold">
+            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+            Hệ sinh thái AI đầu tiên tại Việt Nam
+          </div>
+
+          <h1 className="text-5xl md:text-6xl lg:text-[4.8rem] font-bold text-gray-950 text-center leading-[1.06] mb-5" style={{ fontFamily: "'Inter', sans-serif", letterSpacing: "-0.03em" }}>
+            Làm việc thông minh hơn,<br />
+            <span className="text-blue-500">nhanh hơn với AI.</span>
           </h1>
-          <p className="text-[#888] text-lg md:text-xl text-center mb-12 max-w-2xl font-medium">
-            Hệ sinh thái AI tích hợp sâu. Giao việc, uỷ quyền, tự động hoá — tất cả bắt đầu từ một dấu nhắc.
+          <p className="text-gray-500 text-lg text-center mb-10 max-w-lg font-normal leading-relaxed">
+            Tư vấn · Đào tạo · Công cụ · Marketplace — Vibework đồng hành cùng doanh nghiệp Việt chuyển đổi AI toàn diện.
           </p>
 
-          <div className="w-full max-w-3xl glass-box rounded-3xl p-3 flex flex-col transition-all duration-300 group">
+          {/* AI Chat Box */}
+          <div className="w-full max-w-2xl vw-chat-box flex flex-col">
             <div className="relative">
-              {/* Preview Attachments */}
               {attachments.length > 0 && (
                 <div className="flex flex-wrap gap-2 px-4 pt-4 pb-2">
                   {attachments.map(a => (
-                    <div key={a.id} className="flex items-center gap-1.5 px-3 py-1.5 bg-[#111] border border-white/10 rounded-lg text-xs font-medium text-white/80 group">
+                    <div key={a.id} className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-100 border border-gray-200 rounded-lg text-xs font-medium text-gray-700">
                       {a.type === 'link' ? (
-                        <svg className="w-3.5 h-3.5 text-[#0D9488]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                        <svg className="w-3.5 h-3.5 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
                       ) : (
-                        <svg className="w-3.5 h-3.5 text-[#7C3AED]" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" /></svg>
+                        <svg className="w-3.5 h-3.5 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" /></svg>
                       )}
                       <span className="truncate max-w-[200px]">{a.value}</span>
-                      <button onClick={() => removeAttachment(a.id)} className="ml-1 justify-center rounded-full w-4 h-4 text-white/40 hover:text-white hover:bg-white/20 transition-colors">
-                        <svg className="w-3 h-3 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+                      <button onClick={() => removeAttachment(a.id)} className="ml-1 w-4 h-4 flex items-center justify-center text-gray-400 hover:text-gray-700 rounded-full hover:bg-gray-200 transition-colors">
+                        <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
                       </button>
                     </div>
                   ))}
@@ -682,80 +703,67 @@ export default function HPPlaygroundHero() {
                 value={prompt}
                 onChange={e => setPrompt(e.target.value)}
                 onKeyDown={e => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSubmit(); } }}
-                placeholder="Bạn cần AI giải quyết dự án gì hôm nay? Ví dụ: Thiết kế landing page, phân tích dữ liệu..."
-                className="w-full bg-transparent text-white placeholder-white/30 text-lg md:text-xl p-4 md:p-5 resize-none focus:outline-none min-h-[120px] leading-relaxed"
+                placeholder="Doanh nghiệp bạn đang gặp vấn đề gì? VD: Tối ưu quy trình HR, tự động hoá báo cáo tuần..."
+                className="w-full bg-transparent text-gray-800 placeholder-gray-400 text-base md:text-lg p-5 resize-none focus:outline-none min-h-[110px] leading-relaxed"
               />
             </div>
-            <div className="flex items-center justify-between px-2 pb-2 pt-4 border-t border-white/5 mt-auto relative">
-              <div className="flex items-center gap-1.5 md:gap-3 relative">
+            <div className="flex items-center justify-between px-4 pb-3 pt-2 border-t border-gray-100 relative">
+              <div className="flex items-center gap-2 relative">
                 <input type="file" ref={fileInputRef} onChange={handleFileChange} className="hidden" />
-                <button onClick={() => fileInputRef.current?.click()} className="group relative w-10 h-10 flex items-center justify-center rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" /></svg>
-                  <span className="absolute -top-8 bg-black border border-white/10 text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">File/Tài liệu</span>
+                <button onClick={() => fileInputRef.current?.click()} className="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828l6.414-6.586a4 4 0 00-5.656-5.656l-6.415 6.585a6 6 0 108.486 8.486L20.5 13" /></svg>
                 </button>
-                <button onClick={() => setShowLinkInput(!showLinkInput)} className="group relative w-10 h-10 flex items-center justify-center rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
-                  <span className="absolute -top-8 bg-black border border-white/10 text-[10px] font-bold px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Đính kèm Link</span>
+                <button onClick={() => setShowLinkInput(!showLinkInput)} className="w-8 h-8 flex items-center justify-center rounded-full text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors">
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
                 </button>
-                
-                {/* Link input popover */}
+
                 {showLinkInput && (
-                  <div className="absolute top-12 left-0 w-64 bg-[#111] p-3 rounded-xl border border-white/10 shadow-2xl z-50 animate-in fade-in slide-in-from-top-2">
+                  <div className="absolute top-10 left-0 w-64 bg-white p-3 rounded-xl border border-gray-200 shadow-xl z-50">
                     <div className="flex gap-2">
-                      <input 
+                      <input
                         autoFocus
                         value={linkInput}
                         onChange={(e) => setLinkInput(e.target.value)}
                         onKeyDown={e => { if (e.key === 'Enter') handleAddLink(); }}
-                        placeholder="Dán link tại đây (Fanpage, Drive...)" 
-                        className="flex-1 bg-black border border-white/10 rounded-lg px-3 py-1.5 text-xs text-white placeholder-white/30 focus:outline-none focus:border-[#7C3AED]"
+                        placeholder="Dán link tại đây..."
+                        className="flex-1 bg-gray-50 border border-gray-200 rounded-lg px-3 py-1.5 text-xs text-gray-800 placeholder-gray-400 focus:outline-none focus:border-gray-400"
                       />
-                      <button onClick={handleAddLink} className="bg-white text-black px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-gray-200">
-                        Thêm
-                      </button>
+                      <button onClick={handleAddLink} className="bg-black text-white px-3 py-1.5 rounded-lg text-xs font-bold hover:bg-gray-800">Thêm</button>
                     </div>
                   </div>
                 )}
 
-                <div className="hidden sm:flex items-center bg-[#111] border border-white/10 rounded-full p-1 ml-2">
-                  {["Marketing", "Tech", "Khác"].map(c => (
-                    <button key={c} onClick={() => setCat(c)} className={"px-3 py-1.5 rounded-full text-[11px] font-semibold whitespace-nowrap transition-colors " + (cat === c ? "bg-white/20 text-white" : "text-white/40 hover:text-white/80")}>
-                      {c}
-                    </button>
+                <div className="hidden sm:flex items-center gap-1 ml-1">
+                  {["Marketing", "Tech", "Vận hành"].map(c => (
+                    <button key={c} onClick={() => setCat(c)} className={`vw-tag-pill ${cat === c ? "vw-active" : ""}`}>{c}</button>
                   ))}
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <button className="hidden sm:flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 text-white/60 hover:text-white hover:bg-white/5 transition-colors text-xs font-semibold">
-                  <span className="w-2 h-2 rounded-full bg-[#10B981]" />Gặp Tư Vấn
-                </button>
-                <button className="w-10 h-10 flex items-center justify-center rounded-full text-white/50 hover:text-white hover:bg-white/10 transition-colors">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" /></svg>
-                </button>
-                <button
-                  onClick={handleSubmit}
-                  disabled={!prompt.trim()}
-                  className={"w-10 h-10 flex items-center justify-center rounded-full transition-all duration-300 relative group overflow-hidden " + (prompt.trim() ? "bg-white text-black shadow-[0_0_20px_rgba(255,255,255,0.3)]" : "bg-white/10 text-white/30 cursor-not-allowed")}>
-                  {prompt.trim() && <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-[#7C3AED]/20 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-in-out -translate-x-full" />}
-                  <svg className="w-5 h-5 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 10l7-7m0 0l7 7m-7-7v18" /></svg>
-                </button>
-              </div>
+              <button
+                onClick={handleSubmit}
+                disabled={!prompt.trim()}
+                className={`flex items-center gap-2 px-5 py-2 rounded-full text-sm font-bold transition-all duration-200 ${prompt.trim() ? "bg-black text-white hover:bg-gray-800 shadow-sm" : "bg-gray-100 text-gray-400 cursor-not-allowed"}`}
+              >
+                Phân tích
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+              </button>
             </div>
           </div>
 
-          <div className="mt-8 flex items-center gap-6 opacity-60">
-            <span className="text-white text-xs font-bold uppercase tracking-widest">Powered by</span>
-            <div className="flex gap-4 items-center grayscale opacity-80">
-              <span className="font-serif italic text-sm">OpenAI</span>
-              <span className="font-bold text-sm font-mono">Anthropic</span>
-              <span className="font-sans font-bold text-sm tracking-tight">Google</span>
+          {/* Trust indicators */}
+          <div className="mt-8 flex items-center gap-6 opacity-50">
+            <span className="text-gray-500 text-[11px] font-semibold uppercase tracking-widest">Powered by</span>
+            <div className="flex gap-5 items-center">
+              <span className="font-serif italic text-sm text-gray-600">OpenAI</span>
+              <span className="font-bold text-sm font-mono text-gray-600">Anthropic</span>
+              <span className="font-sans font-bold text-sm text-gray-600 tracking-tight">Google</span>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30 animate-pulse">
-          <span className="text-white text-[10px] uppercase tracking-widest font-bold">Khám phá</span>
-          <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 opacity-30">
+          <span className="text-gray-600 text-[10px] uppercase tracking-widest font-semibold">Khám phá</span>
+          <svg className="w-4 h-4 text-gray-600 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
         </div>
       </section>
 

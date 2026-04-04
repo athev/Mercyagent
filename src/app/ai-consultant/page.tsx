@@ -34,60 +34,105 @@ const depts = ["Tất cả", "Toàn bộ", "Quản lý", "HCNS", "Kế toán", "
 const pricingPlans = [
   {
     name: "Starter",
-    subtitle: "Doanh nghiệp < 20 người",
+    subtitle: "Khởi tạo tự động hóa",
     price: "15.000.000",
-    period: "/ gói 3 tháng",
+    period: "/ dự án",
     highlight: false,
     features: [
-      "1 buổi chẩn đoán quy trình (2h)",
-      "2–3 module AI theo nhu cầu",
-      "Workshop thực hành 1 ngày",
-      "Tài liệu SOP + Template theo phòng ban",
-      "Hỗ trợ Zalo 30 ngày",
-      "Báo cáo KPI sau pilot",
+      "Giải quyết 1 điểm nghẽn duy nhất",
+      "Tự động hóa phễu Marketing / CSKH",
+      "Phù hợp Hộ kinh doanh, SME siêu nhỏ",
+      "Thiết lập luồng tự động (Zapier/Make)",
+      "Đào tạo 1 nhân sự phụ trách",
+      "Hỗ trợ bảo trì 30 ngày",
     ],
     cta: "Bắt đầu ngay",
     ctaStyle: "border",
   },
   {
-    name: "Growth",
-    subtitle: "Doanh nghiệp 20–100 người",
-    price: "35.000.000",
-    period: "/ gói 3 tháng",
+    name: "Professional",
+    subtitle: "Tự động liên phòng ban",
+    price: "45.000.000",
+    period: "/ dự án",
     highlight: true,
-    badge: "Phổ biến nhất",
+    badge: "Tinh gọn toàn diện",
     features: [
-      "2 buổi chẩn đoán quy trình",
-      "5–8 module AI theo phòng ban",
-      "3 workshop thực hành",
-      "SOP + Template toàn bộ phòng ban",
-      "AI Agent tích hợp (1 agent)",
-      "Coaching 1-1 key person",
-      "Hỗ trợ Zalo 90 ngày",
-      "Review KPI hàng tháng",
+      "Số hóa toàn bộ luồng công việc",
+      "Huấn luyện 1 Trợ lý AI nội bộ",
+      "Tự động hóa Marketing - Sales - Vận hành",
+      "Đào tạo AI Literacy toàn đội ngũ",
+      "Phù hợp Doanh nghiệp SMEs",
+      "Hỗ trợ bảo trì 90 ngày",
     ],
     cta: "Tư vấn ngay",
     ctaStyle: "filled",
   },
   {
     name: "Enterprise",
-    subtitle: "Doanh nghiệp > 100 người",
+    subtitle: "Tối ưu & Nâng cấp liên tục",
     price: "Liên hệ",
     period: "/ tuỳ chỉnh",
     highlight: false,
     features: [
-      "Chẩn đoán toàn diện doanh nghiệp",
-      "Toàn bộ 22 module AI",
-      "Workshop liên tục theo phòng ban",
-      "Hệ thống Agent-to-Agent tùy chỉnh",
-      "Tích hợp vào phần mềm nội bộ",
-      "Đội ngũ AI Champion nội bộ",
+      "Tất cả quyền lợi của gói Professional",
+      "Thiết lập Multi-Agent (A2A System)",
+      "Giám sát & bảo trì hệ thống hàng tháng",
+      "Cập nhật liên tục model AI mới nhất",
+      "Bàn giao Cẩm nang vận hành AI",
       "Hỗ trợ 24/7 dedicated",
-      "Roadmap AI 12 tháng",
     ],
     cta: "Liên hệ tư vấn",
     ctaStyle: "border",
   },
+];
+
+const roadmap = [
+  {
+    phase: "Giai đoạn 1",
+    title: "Chẩn đoán & Rà soát (Audit)",
+    time: "Tuần 1",
+    details: [
+      "Khảo sát dòng chảy công việc (Workflow) Sales, Marketing, HR, Vận hành.",
+      "Định vị điểm nghẽn: Công việc thủ công, tốn thời gian, hay sai sót.",
+    ],
+    output: "Báo cáo chẩn đoán & Bản đồ số hóa quy trình.",
+    icon: "🔍"
+  },
+  {
+    phase: "Giai đoạn 2",
+    title: "Tái thiết kế & Kiến trúc AI",
+    time: "Tuần 2-3",
+    details: [
+      "Vẽ lại Sơ đồ quy trình chuẩn (SOP) tối ưu cho máy móc.",
+      "Setup hệ sinh thái: AI Chatbot Sales, AI Content Marketing, Automation luân chuyển Data.",
+    ],
+    output: "Bản vẽ cấu trúc luồng hệ thống AI.",
+    icon: "🏗️"
+  },
+  {
+    phase: "Giai đoạn 3",
+    title: "Triển khai & Thử nghiệm",
+    time: "Tuần 4-6",
+    details: [
+      "Xây dựng Trợ lý ảo nội bộ (Internal AI) từ data công ty.",
+      "Kết nối APIs và setup luồng tự động liên phòng ban.",
+      "A/B Testing, tinh chỉnh Prompts để AI hoạt động tự nhiên.",
+    ],
+    output: "Chạy thực tế (Pilot) trên Dashboard.",
+    icon: "⚡"
+  },
+  {
+    phase: "Giai đoạn 4",
+    title: "Đào tạo & Vô cảm hóa",
+    time: "Tuần 7-8",
+    details: [
+      "Đào tạo AI Literacy: Chuyển nhân sự thành người quản lý AI.",
+      "Bàn giao Dashboard trung tâm cho Giám đốc theo dõi tĩnh.",
+      "Chuyển giao hệ thống, giảm phụ thuộc con người tối đa.",
+    ],
+    output: "Cẩm nang vận hành AI nội bộ.",
+    icon: "🎓"
+  }
 ];
 
 const agentServices = [
@@ -269,6 +314,57 @@ export default function AIConsultantPage() {
         </div>
       </section>
 
+      {/* ── CORE PHILOSOPHY & USPS ── */}
+      <section className="py-24 bg-[#0A0A0B] text-white border-y border-gray-800 relative z-10">
+        <div className="absolute inset-0 bg-[#0A0A0B] pointer-events-none" style={{ backgroundImage: "radial-gradient(circle at center, rgba(37,99,235,0.08) 0, transparent 60%)" }}></div>
+        <div className="max-w-6xl mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left: Triết lý */}
+            <div>
+              <p className="text-blue-500 font-bold uppercase tracking-[0.2em] text-xs mb-4">Triết Lý Cốt Lõi</p>
+              <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-[1.15] tracking-tight">
+                Chuyển đổi số toàn diện kết hợp tự động hoá.
+              </h2>
+              <p className="text-gray-400 text-lg leading-relaxed mb-8 max-w-lg">
+                Biến doanh nghiệp từ mô hình <strong className="text-white">"Chạy bằng sức người"</strong> sang <strong className="text-white">"Vận hành bằng dữ liệu và AI"</strong>. Chúng tôi tinh gọn tối đa quy trình, loại bỏ hoàn toàn sự phụ thuộc rủi ro vào cá nhân.
+              </p>
+              <div className="p-7 border-l-4 border-blue-600 bg-white/[0.03] rounded-r-2xl border-y border-r border-white/5 shadow-2xl backdrop-blur-sm">
+                <p className="font-medium text-gray-300 leading-relaxed italic text-lg">
+                  "Thiết lập quyền lực của hệ thống: Nơi mọi quyết định và công việc lặp đi lặp lại đều do máy móc xử lý độc lập, nhất quán tuyệt đối."
+                </p>
+              </div>
+            </div>
+
+            {/* Right: USPs */}
+            <div className="space-y-4">
+              <div className="bg-white/[0.02] border border-white/10 p-7 rounded-3xl flex items-start gap-5 hover:bg-white/[0.04] transition-colors">
+                <div className="w-14 h-14 rounded-full bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 font-black text-xl shadow-[inset_0_0_15px_rgba(59,130,246,0.2)]">-70%</div>
+                <div>
+                  <h4 className="font-bold text-white text-lg mb-1.5 tracking-tight">Cắt giảm tác vụ thủ công</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">Loại bỏ vĩnh viễn thời gian lãng phí cho giấy tờ, nhập liệu và các công việc rập khuôn mệt mỏi.</p>
+                </div>
+              </div>
+              
+              <div className="bg-white/[0.02] border border-white/10 p-7 rounded-3xl flex items-start gap-5 hover:bg-white/[0.04] transition-colors">
+                <div className="w-14 h-14 rounded-full bg-teal-500/10 text-teal-400 flex items-center justify-center shrink-0 font-black text-xl shadow-[inset_0_0_15px_rgba(20,184,166,0.2)]">100%</div>
+                <div>
+                  <h4 className="font-bold text-white text-lg mb-1.5 tracking-tight">Nhất quán trong xử lý</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">Phản hồi khách hàng và vận hành nội chuẩn xác vô cảm, không bị lệch lạc bởi thái độ nhân sự.</p>
+                </div>
+              </div>
+
+              <div className="bg-white/[0.02] border border-white/10 p-7 rounded-3xl flex items-start gap-5 hover:bg-white/[0.04] transition-colors">
+                <div className="w-14 h-14 rounded-full bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0 font-black text-2xl shadow-[inset_0_0_15px_rgba(168,85,247,0.2)]">x5</div>
+                <div>
+                  <h4 className="font-bold text-white text-lg mb-1.5 tracking-tight">Nhân bản công suất chuẩn</h4>
+                  <p className="text-gray-400 text-sm leading-relaxed">Giữ nguyên hoặc thậm chí giảm quy mô phòng ban nhưng sở hữu cỗ máy vận hành tốc độ x3, x5.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── 22 MODULES ── */}
       <section id="modules" className="py-24 bg-[#F8FAFC]">
         <div className="max-w-6xl mx-auto px-6">
@@ -383,6 +479,54 @@ export default function AIConsultantPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ROADMAP ── */}
+      <section className="py-24 bg-white border-t border-gray-100 relative z-10 overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-20">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-blue-600 mb-3">Lộ trình 4-8 Tuần</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-950 mb-4 tracking-tight" style={{ letterSpacing: "-0.02em" }}>Quy trình triển khai chuẩn</h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed">Từng bước thiết lập hệ thống từ chẩn đoán luồng đến bàn giao quyền lực hệ thống hoàn toàn cho doanh nghiệp.</p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6 relative">
+            {/* Đường nối ngang (chỉ Desktop) */}
+            <div className="hidden md:block absolute top-[60px] left-[12%] right-[12%] h-[2px] bg-gray-100 z-0"></div>
+
+            {roadmap.map((step, idx) => (
+              <div key={idx} className="relative group z-10">
+                <div className="bg-white border border-gray-200 rounded-3xl p-8 h-full flex flex-col hover:border-blue-300 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  
+                  <div className="w-16 h-16 bg-white shadow-sm border border-gray-100 rounded-2xl flex items-center justify-center text-3xl mb-8 relative z-10 mx-auto md:mx-0 group-hover:scale-110 transition-transform">
+                    {step.icon}
+                  </div>
+                  
+                  <div className="mb-6 flex-1 text-center md:text-left">
+                    <div className="flex flex-col gap-1 mb-3">
+                      <span className="text-[11px] font-black text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-widest w-fit mx-auto md:mx-0">{step.phase}</span>
+                    </div>
+                    <h3 className="font-bold text-gray-950 text-xl leading-snug">{step.title}</h3>
+                  </div>
+                  
+                  <ul className="space-y-4 mb-8 flex-1">
+                    {step.details.map((d, i) => (
+                      <li key={i} className="text-gray-600 text-sm leading-relaxed flex items-start gap-2.5">
+                        <span className="text-blue-500 mt-0.5 shrink-0"><svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" /></svg></span>
+                        {d}
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  <div className="mt-auto p-4 bg-[#F8FAFC] rounded-xl border border-gray-100 text-center md:text-left">
+                    <p className="text-[10px] text-gray-400 font-bold mb-1 uppercase tracking-widest">Đầu ra:</p>
+                    <p className="text-sm font-semibold text-gray-900 leading-snug">{step.output}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

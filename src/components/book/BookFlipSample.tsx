@@ -3,6 +3,7 @@
 import React, { useRef, useState, forwardRef } from 'react';
 // @ts-ignore
 import HTMLFlipBook from 'react-pageflip';
+const HTMLFlipBookAny = HTMLFlipBook as any;
 import Image from 'next/image';
 
 const pages = [
@@ -93,7 +94,7 @@ export default function BookFlipSample() {
         <div className="flex flex-col items-center justify-center w-full">
           {/* Flipbook Container */}
           <div className="relative w-full max-w-[800px] flex justify-center bg-transparent">
-            <HTMLFlipBook
+            <HTMLFlipBookAny
               width={400}
               height={560}
               size="stretch"
@@ -127,7 +128,7 @@ export default function BookFlipSample() {
               <PageCover pos="bottom">
                 <Image src={pages[8]} alt="Back Cover" fill className="object-cover" />
               </PageCover>
-            </HTMLFlipBook>
+            </HTMLFlipBookAny>
           </div>
 
           {/* Controls */}

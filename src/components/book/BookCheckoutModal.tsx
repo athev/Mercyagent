@@ -38,9 +38,9 @@ export default function BookCheckoutModal({ isOpen, onClose, selectedPackage }: 
     setIsSuccess(true);
   };
 
-  // URL tạo QR động (sử dụng VietQR - Bạn cần thay đổi Ngân Hàng, STK và Tên TK thực tế)
-  const bankId = "MB"; // Mã ngân hàng (vd: MB, VCB, TCB)
-  const accountNo = "0123456789"; // Số tài khoản thật
+  // URL tạo QR động (sử dụng VietQR)
+  const bankId = "TPB"; // Ngân hàng Tiên Phong Bank
+  const accountNo = "0984015904"; // Số tài khoản thật
   const accountName = "VIBEWORK"; // Tên tài khoản
   const qrContent = "sucmanhcuasuvocam";
   

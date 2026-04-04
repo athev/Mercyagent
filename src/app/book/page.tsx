@@ -176,7 +176,7 @@ export default function BookPreorderPageFramer() {
       <section id="pricing" className="py-24 bg-[#FAF9F5] text-gray-900 relative z-10 border-t border-gray-200">
         <div className="max-w-[1100px] mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-[54px] font-black font-sans uppercase tracking-tighter mb-4">Bạn sẽ nhận được gì?</h2>
+            <h2 className="text-3xl md:text-5xl font-black font-sans uppercase tracking-tighter mb-4">Bạn sẽ nhận được gì?</h2>
             <p className="text-gray-500 text-lg md:text-xl font-medium max-w-2xl mx-auto">Tùy vào nhu cầu áp dụng thực tiễn, hãy lựa chọn gói Pre-order phù hợp với doanh nghiệp của bạn.</p>
           </div>
 

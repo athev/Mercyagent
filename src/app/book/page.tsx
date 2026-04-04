@@ -199,7 +199,10 @@ export default function BookPreorderPageFramer() {
                   </li>
                   <li className="flex items-start gap-4 opacity-50">
                     <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5"><svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" /></svg></div>
-                    <span className="font-medium text-lg text-gray-500">1 Buổi AI Consultant Miễn Phí (60p)</span>
+                    <div className="flex flex-col items-start text-left">
+                      <span className="font-medium text-lg text-gray-500">1 Buổi AI Consultant Miễn Phí (60p)</span>
+                      <span className="text-sm text-gray-400 mt-0.5 leading-relaxed">Tư vấn tối ưu tinh gọn quy trình doanh nghiệp và triển khai Agent-to-agent Workflow qua Clawbot</span>
+                    </div>
                   </li>
                   <li className="flex items-start gap-4 opacity-50">
                     <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5"><svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" /></svg></div>
@@ -238,7 +241,10 @@ export default function BookPreorderPageFramer() {
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
-                    <span className="font-bold text-lg text-purple-950">1 Buổi AI Consultant Miễn Phí (60p)</span>
+                    <div className="flex flex-col items-start text-left">
+                      <span className="font-bold text-lg text-purple-950">1 Buổi AI Consultant Miễn Phí (60p)</span>
+                      <span className="text-sm font-medium text-purple-800/80 mt-0.5 leading-relaxed">Tư vấn tối ưu tinh gọn quy trình doanh nghiệp và triển khai Agent-to-agent Workflow qua Clawbot</span>
+                    </div>
                   </li>
                   <li className="flex items-start gap-4">
                     <div className="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
@@ -276,7 +282,10 @@ export default function BookPreorderPageFramer() {
                    <div className="col-span-2 text-center flex justify-center"><svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
                 </div>
                 <div className="grid grid-cols-12 gap-4 py-4 px-4 hover:bg-gray-50 rounded-lg transition-colors">
-                   <div className="col-span-8">1 Buổi 1-on-1 AI Consultant trực tiếp cùng VP Vibework</div>
+                   <div className="col-span-8">
+                     1 Buổi 1-on-1 AI Consultant trực tiếp cùng VP Vibework
+                     <div className="text-sm text-gray-500 font-normal mt-1 leading-relaxed">Tư vấn tối ưu tinh gọn quy trình doanh nghiệp và triển khai Agent-to-agent Workflow qua Clawbot</div>
+                   </div>
                    <div className="col-span-2 text-center flex justify-center text-gray-300">—</div>
                    <div className="col-span-2 text-center flex justify-center"><svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
                 </div>

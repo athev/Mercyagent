@@ -94,8 +94,8 @@ export default function BookPreorderPageFramer() {
               
               <h1 className="text-[2.25rem] md:text-5xl lg:text-[60px] font-black text-[#111] leading-[1.1] tracking-tight mb-8">
                 Bí mật thay thế<br />
-                bộ máy quản lý bằng<br />
-                hệ thống <span className="text-blue-600">Multi-Agent AI</span> tự vận hành 24/7.
+                bộ máy nhân sự ì ạch bằng<br />
+                hệ thống <span className="text-blue-600">Multi-Agent AI</span>
               </h1>
               
               <p className="text-lg md:text-xl text-gray-600 mb-10 font-medium max-w-lg leading-relaxed">
@@ -202,6 +202,9 @@ export default function BookPreorderPageFramer() {
                     <div className="flex flex-col items-start text-left">
                       <span className="font-medium text-lg text-gray-500">1 Buổi AI Consultant Miễn Phí (60p)</span>
                       <span className="text-sm text-gray-400 mt-0.5 leading-relaxed">Tư vấn tối ưu tinh gọn quy trình doanh nghiệp và triển khai Agent-to-agent Workflow qua Clawbot</span>
+                      <Link href="/ai-consultant" className="text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-md mt-1 hover:bg-gray-200 transition-colors inline-block w-fit">
+                        Xem chi tiết chương trình
+                      </Link>
                     </div>
                   </li>
                   <li className="flex items-start gap-4 opacity-50">
@@ -210,7 +213,7 @@ export default function BookPreorderPageFramer() {
                   </li>
                   <li className="flex items-start gap-4 opacity-50">
                     <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center shrink-0 mt-0.5"><svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" /></svg></div>
-                    <span className="font-medium text-lg text-gray-500">USB 300+ Biểu mẫu Tài Liệu Quản Trị Hệ Thống CEOVIET</span>
+                    <span className="font-medium text-lg text-gray-500">1 USB 1000+ tài liệu quản trị làm Knowledge Base cho Nhân viên AI kế thừa sử dụng</span>
                   </li>
                 </ul>
               </div>
@@ -244,6 +247,9 @@ export default function BookPreorderPageFramer() {
                     <div className="flex flex-col items-start text-left">
                       <span className="font-bold text-lg text-purple-950">1 Buổi AI Consultant Miễn Phí (60p)</span>
                       <span className="text-sm font-medium text-purple-800/80 mt-0.5 leading-relaxed">Tư vấn tối ưu tinh gọn quy trình doanh nghiệp và triển khai Agent-to-agent Workflow qua Clawbot</span>
+                      <Link href="/ai-consultant" className="text-sm font-bold text-purple-700 bg-white/50 px-3 py-1 rounded-md mt-1 hover:bg-white transition-colors inline-block w-fit">
+                        Xem chi tiết chương trình
+                      </Link>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -253,8 +259,8 @@ export default function BookPreorderPageFramer() {
                   <li className="flex items-start gap-4">
                     <div className="w-8 h-8 rounded-full bg-purple-600 text-white flex items-center justify-center shrink-0 mt-0.5 shadow-sm"><svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
                     <div className="flex flex-col items-start text-left">
-                      <span className="font-bold text-lg text-purple-950">Thẻ USB Tài Liệu Setup Công ty</span>
-                      <button onClick={() => setShowUSBModal(true)} className="text-sm font-bold text-purple-700 bg-white/50 px-3 py-1 rounded-md mt-1 hover:bg-white transition-colors">Xem 300+ Biểu mẫu</button>
+                      <span className="font-bold text-lg text-purple-950">1 USB 1000+ tài liệu quản trị doanh nghiệp làm Knowledge Base cho Nhân viên AI kế thừa sử dụng</span>
+                      <button onClick={() => setShowUSBModal(true)} className="text-sm font-bold text-purple-700 bg-white/50 px-3 py-1 rounded-md mt-1 hover:bg-white transition-colors">Xem 1000+ Biểu mẫu</button>
                     </div>
                   </li>
                 </ul>
@@ -284,13 +290,18 @@ export default function BookPreorderPageFramer() {
                 <div className="grid grid-cols-12 gap-4 py-4 px-4 hover:bg-gray-50 rounded-lg transition-colors">
                    <div className="col-span-8">
                      1 Buổi 1-on-1 AI Consultant trực tiếp cùng VP Vibework
-                     <div className="text-sm text-gray-500 font-normal mt-1 leading-relaxed">Tư vấn tối ưu tinh gọn quy trình doanh nghiệp và triển khai Agent-to-agent Workflow qua Clawbot</div>
+                     <div className="text-sm text-gray-500 font-normal mt-1 leading-relaxed">
+                       Tư vấn tối ưu tinh gọn quy trình doanh nghiệp và triển khai Agent-to-agent Workflow qua Clawbot
+                       <Link href="/ai-consultant" className="text-purple-600 hover:underline ml-2 font-bold inline-block">
+                         (Xem chi tiết chương trình)
+                       </Link>
+                     </div>
                    </div>
                    <div className="col-span-2 text-center flex justify-center text-gray-300">—</div>
                    <div className="col-span-2 text-center flex justify-center"><svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
                 </div>
                 <div className="grid grid-cols-12 gap-4 py-4 px-4 hover:bg-gray-50 rounded-lg transition-colors">
-                   <div className="col-span-8">USB Gói 300+ Biểu mẫu Lập Kế hoạch Dòng Tiền, BSC KPI, Nhân Sự (Từ Ceoviet.group)</div>
+                   <div className="col-span-8">1 USB 1000+ tài liệu quản trị doanh nghiệp làm Knowledge Base cho Nhân viên AI kế thừa sử dụng (bao gồm các Biểu mẫu Lập Kế hoạch Dòng Tiền, BSC KPI, Nhân Sự,...)</div>
                    <div className="col-span-2 text-center flex justify-center text-gray-300">—</div>
                    <div className="col-span-2 text-center flex justify-center"><svg className="w-6 h-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" /></svg></div>
                 </div>
@@ -313,7 +324,7 @@ export default function BookPreorderPageFramer() {
             <div className="p-6 md:p-8 flex items-center justify-between bg-white border-b border-gray-100">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-black text-white rounded-xl flex items-center justify-center text-2xl shadow-md">💾</div>
-                <h3 className="text-2xl font-black text-gray-900 tracking-tight">Chi tiết USB Quản Trị</h3>
+                <h3 className="text-2xl font-black text-gray-900 tracking-tight">Chi tiết Bộ Knowledge mẫu cho AI</h3>
               </div>
               <button onClick={() => setShowUSBModal(false)} className="w-10 h-10 flex flex-shrink-0 items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 text-gray-900 transition-colors">
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
@@ -323,7 +334,7 @@ export default function BookPreorderPageFramer() {
             <div className="p-8 overflow-y-auto" style={{ scrollbarWidth: 'thin' }}>
               <div className="prose prose-blue max-w-none text-gray-700">
                 <p className="font-bold text-xl text-gray-900 mb-8 leading-snug">
-                  Được đúc kết từ thực chiến, thẻ USB này cung cấp 300+ biểu mẫu đã được chứng minh hiệu quả.
+                  1 USB 1000+ tài liệu quản trị doanh nghiệp làm Knowledge Base cho Nhân viên AI kế thừa sử dụng (bao gồm các Biểu mẫu Lập Kế hoạch Dòng Tiền, BSC KPI, Nhân Sự,...)
                 </p>
                 
                 <h4 className="font-black text-gray-900 mt-6 flex items-center gap-3">

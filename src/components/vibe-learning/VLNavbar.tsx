@@ -23,6 +23,7 @@ export default function VLNavbar() {
         { href: "#quests", label: "Quest" },
         { href: "#skill-tree", label: "Skill Tree" },
         { href: "#pricing", label: "Học phí" },
+        { href: "/vibe-learning/trainer", label: "🏫 Giảng viên" },
     ];
 
     return (

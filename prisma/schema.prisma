@@ -3,9 +3,8 @@ generator client {
 }
 
 datasource db {
-  provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
 }
 
 model Account {
@@ -50,6 +49,10 @@ model User {
   tools         UserToolSubscription[]
   agents        UserAgentContract[]
   tickets       UserTicket[]
+  
+  // Syllabus Builder Relations
+  trainerMemberships TrainerMembership[]
+  syllabuses         CourseSyllabus[]
 }
 
 model VerificationToken {
@@ -77,7 +80,7 @@ model UserDNA {
   phone        String?
   
   toneOfVoice     String?
-  extraGuidelines String? @db.Text
+  extraGuidelines String? // @db.Text removed for SQLite compat
   competitors     String? // JSON string
   niches          String? // JSON string
   
@@ -95,7 +98,7 @@ model Product {
   dna         UserDNA  @relation(fields: [dnaId], references: [id], onDelete: Cascade)
   
   title       String
-  description String?  @db.Text
+  description String?
   imageUrl    String?
   price       String?
   
@@ -161,7 +164,7 @@ model UserTicket {
   user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   
   title        String
-  description  String?  @db.Text
+  description  String?
   demoUrl      String?
   quoteAmount  String?  // Store as string (e.g., "2.5M") for now or Float
   status       String   @default("consulting") // consulting | quoted | in_progress | completed | cancelled
@@ -176,8 +179,8 @@ model UserTicket {
 model JobTicket {
   id              String   @id @default(cuid())
   title           String
-  description     String   @db.Text
-  analysisData    Json?    // Chứa workflow do Gemini sinh ra
+  description     String
+  analysisData    String?  // JSON string - Chứa workflow do Gemini sinh ra
   budget          String?  // Gợi ý ngân sách
   status          String   @default("OPEN") // OPEN, IN_PROGRESS, COMPLETED
   createdAt       DateTime @default(now())
@@ -192,7 +195,7 @@ model JobTicket {
 model TrainerProfile {
   id              String   @id @default(cuid())
   userId          String   @unique
-  specialties     String[] // ["Marketing", "Code react", "Midjourney AI"]
+  specialties     String  @default("[]") // JSON string array for SQLite compat
   rating          Float    @default(0)
   jobsCompleted   Int      @default(0)
   rankingTier     String   @default("Novice") // Novice, Pro, Elite
@@ -209,3 +212,67 @@ model JobProposal {
   createdAt       DateTime @default(now())
 }
 
+// ============================================
+// --- Syllabus Builder Models (Vibe-Learning) ---
+// ============================================
+
+// Tổ chức đối tác chiến lược của Vibework
+model Organization {
+  id             String   @id @default(cuid())
+  name           String   // e.g. "ELIVE Academy"
+  slug           String   @unique // e.g. "elive"
+  logoText       String   @default("ORG") // Text fallback for logo
+  primaryColor   String   @default("#6d28d9")
+  secondaryColor String   @default("#2563eb")
+  accentColor    String   @default("#7c3aed")
+  website        String?
+  address        String?
+  phone          String?
+  email          String?
+  isVerified     Boolean  @default(false)
+  createdAt      DateTime @default(now())
+
+  members        TrainerMembership[]
+  syllabuses     CourseSyllabus[]
+}
+
+// Liên kết giảng viên ↔ Tổ chức đối tác
+model TrainerMembership {
+  id             String   @id @default(cuid())
+  userId         String
+  organizationId String
+  role           String   @default("trainer") // trainer | org_admin
+  isApproved     Boolean  @default(true)
+  joinedAt       DateTime @default(now())
+
+  user           User         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  organization   Organization @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, organizationId])
+}
+
+// Đề cương khóa học theo tiêu chuẩn Vibework Academy
+model CourseSyllabus {
+  id             String   @id @default(cuid())
+  title          String
+  courseCode     String?
+  status         String   @default("DRAFT") // DRAFT | CERTIFIED
+
+  // 7 Sections bắt buộc — stored as JSON strings
+  section1       String?  // Thông tin chung
+  section2       String?  // Giới thiệu chương trình
+  section3       String?  // Lợi ích khi tham gia
+  section4       String?  // Đối tượng học viên
+  section5       String?  // Khung chương trình chi tiết
+  section6       String?  // Đội ngũ chuyên gia
+  section7       String?  // Phương pháp & Đánh giá
+
+  authorId       String
+  organizationId String
+
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  author         User         @relation(fields: [authorId], references: [id])
+  organization   Organization @relation(fields: [organizationId], references: [id])
+}
